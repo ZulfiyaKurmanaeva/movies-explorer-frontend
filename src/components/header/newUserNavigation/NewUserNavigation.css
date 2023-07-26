@@ -1,0 +1,56 @@
+ .buttons__container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;    
+  }
+  
+  .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;    
+    border: 0;
+  }
+   
+  .button:hover {
+    cursor: pointer;
+    opacity: .6;
+  }
+
+  .button_type_signin {   
+    color: #fff;
+    background-color: inherit;
+  }
+   
+  .button_type_login {
+    background-color: #3DDC84;
+    border-radius: 3px;
+    width: 76px;
+    height: 32px;    
+    color: #000;   
+  }  
+  
+   @media (max-width: 470px) {
+    
+    .button_type_login {
+      width: 55px;
+      height: 25px;
+      font-size: 10px;
+      line-height: 16px;
+    }
+  
+    .buttons__container {
+      gap: 14px;
+    }
+  
+    .button_type_signin {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }

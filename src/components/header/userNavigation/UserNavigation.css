@@ -1,0 +1,90 @@
+  .navbar__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .movies__navbar {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    margin: 0 0 0 40px;
+  }
+  
+  .movies__link {
+    text-align: right;
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: none;
+  }
+  
+  .movies__link:hover {
+    cursor: pointer;
+    opacity: .6;
+  }
+  
+  .movies__link_type_active {
+    font-weight: 500;
+    font-size: 14px;    
+  }
+  
+  .profile-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100px;
+    height: 32px;
+    background-color: #313131;
+    border-radius: 20%;
+  }
+  
+  .profile-link:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+  
+  .profile-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .burger__button {
+    width: 44px;
+    height: 44px;
+    background-image: url(../../../images/burger-logo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: inherit;
+    border: 0;
+    display: none;
+  }
+  
+  .burger__button:hover {
+    opacity: .8;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 770px) {
+    .movies__navbar {
+      display: none;
+    }
+  
+    .profile-link {
+      display: none;
+    }
+
+    .burger__button {
+      display: block;
+    } 
+  }
+  
+  
+ 

@@ -1,0 +1,111 @@
+.burger__overlay {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);  
+}
+
+.burger__container {
+    z-index: 4;
+    top: 0;
+    right: 0;
+    padding-top: 160px;
+    background-color: #202020;
+    height: 100vh;
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;    
+  }
+  
+  .burger__container_type_hidden {
+    display: none;
+  }
+  
+  .burger__close-button {
+    width: 22px;
+    height: 22px;
+    top: 25px;
+    right: 25px;
+    background-color:inherit;
+    background-image: url(../../../images/burgerClose.svg);
+    background-position: center;
+    border: 0;
+    position: absolute;    
+  }
+  
+  .burger__close-button:hover {
+    opacity: .6;
+    cursor: pointer;
+  }
+  
+  .burger__navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }  
+  
+  .burger-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .burger-link:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+  
+  .burger-link_type_active {
+    padding-bottom: 4px;
+    border-bottom: solid #fff 2px;
+  }
+  
+  .burger__profile-link {
+    display: none;
+  }  
+  
+  @media (max-width: 470px) {
+    .burger__container {
+      width: 100vw;
+      height: 100vh;
+      padding-top: 140px;
+    }
+    
+    .burger__navbar {
+      gap: 24px;
+    }
+  
+    .burger__profile-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 46px;
+      text-decoration: none;
+      width: 100px;
+      height: 32px;
+      background-color: #313131;
+      border-radius: 20%;
+    }
+    
+    .burger__profile-name {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .burger__profile-link:hover {
+      opacity: .7;
+    }
+  }
