@@ -16,7 +16,8 @@
     justify-content: center;
 	grid-template-columns: repeat(3, 360px);
 	gap: 20px;
-	border-top: 3px solid rgba(66, 66, 66, 0.2);	
+	border-top: 3px solid rgba(66, 66, 66, 0.2);
+	list-style-type: none;
 }
 
 .moviesCardList__add {

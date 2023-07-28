@@ -13,7 +13,7 @@ export default function MoviesCard({isSavedMovies}) {
           <h2 className="moviesCard__title">Книготорговцы</h2>
           <p className="moviesCard__duration">1ч 37м</p>
         </div>
-        <button className={isSavedMovies?' moviesCard__remove' : 'moviesCard__like moviesCard__like_active'}></button>
+        <button type='button' className={isSavedMovies?' moviesCard__remove' : 'moviesCard__like moviesCard__like_active'}></button>
       </div>     
     </div>
    

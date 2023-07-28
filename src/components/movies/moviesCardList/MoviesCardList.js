@@ -5,22 +5,22 @@ export default function MoviesCardList({isSavedMovies}) {
   return (
     <>
      <section className="moviesCardList">
-       <div className="moviesCardList__container">
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-        <MoviesCard isSavedMovies={isSavedMovies}/>
-       </div>
+       <ul className="moviesCardList__container">
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+       </ul>
        <div  className={isSavedMovies? 'moviesCardList__add_invisible' : 'moviesCardList__add'}>
-        <button className="moviesCardList__button">Еще</button>
+        <button type='button' className="moviesCardList__button">Еще</button>
        </div>
      </section>
     </>

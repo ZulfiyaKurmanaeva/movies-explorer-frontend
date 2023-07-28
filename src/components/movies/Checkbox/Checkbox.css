@@ -4,7 +4,9 @@
     display: flex;
     background-color:transparent;
     align-items: center;
-    justify-content: flex-start;    
+    justify-content: flex-start;
+    height: 40px;
+    border-left: 2px solid #505050;
 }
 
 .checkbox__input {
