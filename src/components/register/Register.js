@@ -20,11 +20,11 @@ function Register() {
         <div className='register__data'>
           <form className='register__form' >
             <label className='register__label'>Имя</label>
-            <input className='register__input' required type="text" placeholder='Виталий' />       
+            <input className='register__input' required type="text" placeholder='Виталий' minLength="2" maxLength="40" />       
             <label className='register__label'>E-mail</label>
             <input className='register__input' required type="email" placeholder='pochta@yandex.ru' />            
             <label className='register__label'>Пароль</label>
-            <input className='register__input register__input-password' required type="password" minLength={8} maxLength={16} placeholder='* * * * * * * * *'/>
+            <input className='register__input register__input-password' required type="password" minLength="6" maxLength="16" placeholder='* * * * * * * * *'/>
             <span className='register__input-error'>Что-то пошло не так...</span>         
             <button onClick={temporaryLogin} type='button'  className='register__submit-button'>Зарегистрироваться</button>
           </form>
