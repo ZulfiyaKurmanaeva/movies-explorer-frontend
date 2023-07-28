@@ -1,17 +1,17 @@
-  .navbar__container{
+  .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
-  .movies__navbar {
+  .navbar__links {
     display: flex;
     gap: 16px;
     padding: 0;
     margin: 0 0 0 40px;
   }
   
-  .movies__link {
+  .navbar__link {
     text-align: right;
     color: #fff;
     font-weight: 400;
@@ -20,17 +20,17 @@
     text-decoration: none;
   }
   
-  .movies__link:hover {
+  .navbar__link:hover {
     cursor: pointer;
     opacity: .6;
   }
   
-  .movies__link_type_active {
+  .navbar__link_type_active {
     font-weight: 500;
     font-size: 14px;    
   }
   
-  .profile-link {
+  .navbar__profile-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,12 +41,12 @@
     border-radius: 20%;
   }
   
-  .profile-link:hover {
+  .navbar__profile-link:hover {
     opacity: .7;
     cursor: pointer;
   }
   
-  .profile-name {
+  .navbar__profile-name {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -55,7 +55,7 @@
     margin: 0;
   }
   
-  .burger__button {
+  .navbar__burger-button {
     width: 44px;
     height: 44px;
     background-image: url(../../../images/burger-logo.svg);
@@ -67,21 +67,21 @@
     display: none;
   }
   
-  .burger__button:hover {
+  .navbar__burger-button:hover {
     opacity: .8;
     cursor: pointer;
   }
   
   @media (max-width: 770px) {
-    .movies__navbar {
+    .navbar__links {
       display: none;
     }
   
-    .profile-link {
+    .navbar__profile-link {
       display: none;
     }
 
-    .burger__button {
+    .navbar__burger-button {
       display: block;
     } 
   }

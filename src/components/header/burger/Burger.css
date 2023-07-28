@@ -51,7 +51,7 @@
     gap: 28px;
   }  
   
-  .burger-link {
+  .burger__link {
     font-size: 18px;
     font-weight: 500;
     color: #fff;
@@ -59,12 +59,12 @@
     text-decoration: none;
   }
   
-  .burger-link:hover {
+  .burger__link:hover {
     opacity: .7;
     cursor: pointer;
   }
   
-  .burger-link_type_active {
+  .burger__link_type_active {
     padding-bottom: 4px;
     border-bottom: solid #fff 2px;
   }

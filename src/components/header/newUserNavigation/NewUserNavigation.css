@@ -1,4 +1,4 @@
- .buttons__container {
+ .header-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -6,7 +6,7 @@
     margin-bottom: 2px;    
   }
   
-  .button{
+  .header-buttons__button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,17 +18,17 @@
     border: 0;
   }
    
-  .button:hover {
+  .header-buttons__button:hover {
     cursor: pointer;
     opacity: .6;
   }
 
-  .button_type_signin {   
+  .header-buttons__button_type_signin {   
     color: #fff;
     background-color: inherit;
   }
    
-  .button_type_login {
+  .header-buttons__button_type_login {
     background-color: #3DDC84;
     border-radius: 3px;
     width: 76px;
@@ -38,18 +38,18 @@
   
    @media (max-width: 470px) {
     
-    .button_type_login {
+    .header-buttons__button_type_login {
       width: 55px;
       height: 25px;
       font-size: 10px;
       line-height: 16px;
     }
   
-    .buttons__container {
+    .header-buttons {
       gap: 14px;
     }
   
-    .button_type_signin {
+    .header-buttons__button_type_signin {
       font-size: 10px;
       line-height: 16px;
     }

@@ -8,20 +8,20 @@ function Burger({ isOpened, closeBurger }) {
   const savedMovies = location.pathname === '/saved-movies';
 
   return (
-    <>
+    <div className="burger">
       {isOpened && <div className="burger__overlay" onClick={closeBurger}></div>}
       <div className={isOpened ? 'burger__container' : 'burger__container_type_hidden'}>
         <button onClick={closeBurger} className='burger__close-button' type='button'></button>
         <nav className='burger__navbar'>
-          <NavLink to='/' className={main? 'burger-link burger-link_type_active' : 'burger-link'}>Главная</NavLink>
-          <NavLink to='/movies' className={movies? 'burger-link burger-link_type_active' : 'burger-link'}>Фильмы</NavLink>
-          <NavLink to='/saved-movies' className={savedMovies? 'burger-link burger-link_type_active' : 'burger-link'}>Сохраненые фильмы</NavLink>
+          <NavLink to='/' className={main? 'burger__link burger__link_type_active' : 'burger__link'}>Главная</NavLink>
+          <NavLink to='/movies' className={movies? 'burger__link burger__link_type_active' : 'burger__link'}>Фильмы</NavLink>
+          <NavLink to='/saved-movies' className={savedMovies? 'burger__link burger-link_type_active' : 'burger__link'}>Сохраненые фильмы</NavLink>
         </nav>
         <Link to='/profile' className='burger__profile-link'>          
           <p className='burger__profile-name'>Аккаунт</p>
         </Link>
       </div>
-    </>
+    </div>
   );
 }
 

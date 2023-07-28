@@ -13,7 +13,7 @@ function Main() {
   return (
     <>
       <Header />
-      <main className='mainPage'>
+      <main className='main-page'>
         <Promo />
         <NavTab />
         <AboutProject />

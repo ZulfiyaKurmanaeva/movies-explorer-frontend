@@ -1,4 +1,4 @@
-.aboutProject {
+.project {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -9,7 +9,7 @@
   box-sizing: border-box;
   }
 
-  .aboutProject__container{
+  .project__container{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -17,7 +17,7 @@
     width: 100%
   }
     
-  .aboutProject__title {
+  .project__title {
     font-weight: 400;
     font-size: 22px;
     line-height: 27px;
@@ -27,7 +27,7 @@
     text-align: left;
   }
   
-  .aboutProject__description {
+  .project__description {
     display: flex;
     border-top: solid #424242;
     justify-content: center;
@@ -36,13 +36,13 @@
     gap: 56px;
   }
   
-  .aboutProject__info {
+  .project__info {
     width: 50%;
     display: flex;
     flex-direction: column;
   }
   
-  .aboutProject__info-title {
+  .project__info-title {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;    
@@ -50,7 +50,7 @@
     text-align: start;
   }
   
-  .aboutProject__info-text {
+  .project__info-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -59,22 +59,22 @@
     margin: 5px 0;
   }
   
-  .aboutProject__duration {
+  .project__duration {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
   }
   
-  .aboutProject__back {
+  .project__back {
     width: 20%;
   }
   
-  .aboutProject__front {
+  .project__front {
     width: 80%;
   }
   
-  .aboutProject__weeks {
+  .project__weeks {
     height: 36px;
     display: flex;
     justify-content: center;
@@ -86,17 +86,17 @@
     text-align: center;
   }
   
-  .aboutProject__weeks_green {
+  .project__weeks_type_green {
     background-color: #3DDC84;
     color: black;
   }
   
-  .aboutProject__weeks_gray {
+  .project__weeks_type_gray {
     background-color: #303030;
     color: white;
   }
   
-  .aboutProject__weeks-name {
+  .project__weeks-name {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
@@ -106,22 +106,22 @@
   }
   
   @media (max-width: 770px) {
-    .aboutProject {
+    .project {
       padding: 90px 50px;
     }
 
-    .aboutProject__container{
+    .project__container{
       max-width: 668px;
       width: 100%
     }
       
   
-    .aboutProject__description {
+    .project__description {
       gap: 30px;
       padding: 52px 0 70px;
     }
   
-    .aboutProject__info-text {
+    .project__info-text {
       margin: 2px 0;
       font-size: 12px;
       line-height: 18px;
@@ -130,44 +130,43 @@
   }
   
   @media (max-width: 470px) {
-    .aboutProject {
+    .project {
       padding: 70px 18px;
     }
 
-    .aboutProject__container {
+    .project__container {
       max-width: 284px;
       width: 100%
     }  
   
-    .aboutProject__description {
+    .project__description {
       gap: 56px;
       margin-bottom: 26px;
       flex-direction: column;
     }
  
-    .aboutProject__info {
+    .project__info {
       width: 100%;
       flex-direction: column;
     }
    
-    .aboutProject__info-title {
+    .project__info-title {
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 16px;
     }
   
-    .aboutProject__info-text {
+    .project__info-text {
       font-size: 11px;
       line-height: 16px;
       margin: 0;
     }
 
-    .aboutProject__weeks {
+    .project__weeks {
       font-size: 11px;
     }   
    
-    .aboutProject__weeks-name {
+    .project__weeks-name {
       font-size: 11px;      
-    }
-   
+    }   
   }

@@ -12,9 +12,9 @@ const login = () => {
     navigateNewUser('/signin');
 };
 	return (
-        <div className='buttons__container'>
-            <button onClick={signin} type='button' className='button button_type_signin'>Регистрация</button>
-            <button onClick={login} type='button' className='button button_type_login'>Войти</button>
+        <div className='header-buttons'>
+            <button onClick={signin} type='button' className='header-buttons__button header-buttons__button_type_signin'>Регистрация</button>
+            <button onClick={login} type='button' className='header-buttons__button header-buttons__button_type_login'>Войти</button>
           </div>
 	);
 }
