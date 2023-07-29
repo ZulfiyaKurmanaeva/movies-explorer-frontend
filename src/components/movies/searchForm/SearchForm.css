@@ -16,7 +16,8 @@
   width: 100%;
   margin: 0 auto;  
   border-radius: 9px;  
-  background-color: #222;
+  background-color: #2a2a2a;
+  border-radius: 9px;
 }
 
 .search__input-container{
@@ -29,27 +30,26 @@
 .search__input {
   width: 100%;
   padding: 20px 10px 20px 40px;
-  background-color:transparent;
-  color: #8B8B8B;
+  color: #fff;
   text-align: left;
   outline: none;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
-  border: none;
-  cursor: pointer;
-  background-image: url('../../../images/background-lupa.svg');
-  border: none;
+  border: none;  
+  background-image: url('../../../images/background-lupa.svg'); 
   background-position: left;
   background-repeat: no-repeat;
-  background-color:transparent;
   object-fit: cover;
   align-self: center;
+  background-color: inherit;
 }
 
 .search__input:focus {
-  background-image: none
+  background-image: none;
+  outline: none;
+  transform: scale(1.01);
 }
 
 .search__button {
@@ -69,6 +69,8 @@
 
 .search__button:hover {
   opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 @media screen and (max-width: 770px) {

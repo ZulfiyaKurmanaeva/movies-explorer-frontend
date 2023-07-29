@@ -35,8 +35,9 @@
   }
   
   .not-found__link:hover {
+    opacity: 0.6;
     cursor: pointer;
-    opacity: .6;
+    transition: opacity 0.3s ease;
   }
 
   @media (max-width: 470px) {

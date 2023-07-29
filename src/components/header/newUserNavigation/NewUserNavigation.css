@@ -19,8 +19,9 @@
   }
    
   .header-buttons__button:hover {
+    opacity: 0.6;
     cursor: pointer;
-    opacity: .6;
+    transition: opacity 0.3s ease;
   }
 
   .header-buttons__button_type_signin {   

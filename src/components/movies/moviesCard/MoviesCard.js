@@ -6,14 +6,14 @@ export default function MoviesCard({isSavedMovies}) {
    
   // в дальнейшем будет добавлено переключение лайка
   return (
-       <div className="moviesCard">
+       <div className="movie-card">
        <img src={moviePic} alt="постер" />
-      <div className="moviesCard__description">
+      <div className="movie-card__description">
         <div>
-          <h2 className="moviesCard__title">Книготорговцы</h2>
-          <p className="moviesCard__duration">1ч 37м</p>
+          <h2 className="movie-card__title">Книготорговцы</h2>
+          <p className="movie-card__duration">1ч 37м</p>
         </div>
-        <button type='button' className={isSavedMovies?' moviesCard__remove' : 'moviesCard__like moviesCard__like_active'}></button>
+        <button type='button' className={isSavedMovies? 'movie-card__remove' : 'movie-card__like movie-card__like_active'}></button>
       </div>     
     </div>
    

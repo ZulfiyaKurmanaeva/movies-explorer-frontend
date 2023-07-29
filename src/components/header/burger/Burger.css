@@ -40,8 +40,9 @@
   }
   
   .burger__close-button:hover {
-    opacity: .6;
-    cursor: pointer;
+    opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
   }
   
   .burger__navbar {
@@ -60,8 +61,9 @@
   }
   
   .burger__link:hover {
-    opacity: .7;
-    cursor: pointer;
+    opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
   }
   
   .burger__link_type_active {
@@ -106,6 +108,8 @@
     }
     
     .burger__profile-link:hover {
-      opacity: .7;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
     }
   }

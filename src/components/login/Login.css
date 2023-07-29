@@ -31,8 +31,9 @@
   }
   
   .login__logo:hover {
-    opacity: .6;
+    opacity: 0.6;
     cursor: pointer;
+    transition: opacity 0.3s ease;
   }
   
   .login__title {
@@ -68,15 +69,18 @@
     font-weight: 400;
     font-size: 14px;
     color: #fff;
-    border: 0;
-    background: #2f2f2f;
+    border: none;
+    background-color: #2f2f2f;
     width: 100%;
     padding: 15px;
     margin: 0 0 20px 0;
     border-radius: 8px;
-    box-shadow: none;
-    outline: none;
     box-sizing: border-box;
+  }
+
+  .login__input:focus {
+    outline: none;
+    transform: scale(1.01);
   }
     
   .login__submit-button {
@@ -93,8 +97,9 @@
   }
   
   .login__submit-button:hover {
+    opacity: 0.6;
     cursor: pointer;
-    opacity: .6;
+     transition: opacity 0.3s ease;
   }
   
   .login__correction {
@@ -121,7 +126,9 @@
   }
   
   .login__link-signup:hover {
-    opacity: .6;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
   }
 
   @media (max-width: 770px) {

@@ -21,7 +21,7 @@
 
 .header_type_blue {
   background-color: #073042;
-  justify-content: space-between;
+  
 }
 
 .header__logo {
@@ -30,8 +30,9 @@
 }
 
 .header__logo-link:hover {
-  opacity: .6;
+  opacity: 0.6;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 @media (max-width: 770px) {

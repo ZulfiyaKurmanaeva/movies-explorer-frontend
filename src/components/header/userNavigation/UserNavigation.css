@@ -1,17 +1,20 @@
-  .navbar{
+  .user-navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    align-items: center;
+    margin-bottom: 2px;   
   }
-  .navbar__links {
+  
+  .user-navbar__links {
     display: flex;
     gap: 16px;
     padding: 0;
     margin: 0 0 0 40px;
   }
   
-  .navbar__link {
+  .user-navbar__link {
     text-align: right;
     color: #fff;
     font-weight: 400;
@@ -20,17 +23,18 @@
     text-decoration: none;
   }
   
-  .navbar__link:hover {
-    cursor: pointer;
-    opacity: .6;
+  .user-navbar__link:hover {
+    opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
   }
   
-  .navbar__link_type_active {
+  .user-navbar__link_type_active {
     font-weight: 500;
     font-size: 14px;    
   }
   
-  .navbar__profile-link {
+  .user-navbar__profile-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,14 +43,16 @@
     height: 32px;
     background-color: #313131;
     border-radius: 20%;
+    align-self: flex-end;
   }
   
-  .navbar__profile-link:hover {
-    opacity: .7;
+  .user-navbar__profile-link:hover {
+    opacity: 0.6;
     cursor: pointer;
+    transition: opacity 0.3s ease;
   }
   
-  .navbar__profile-name {
+  .user-navbar__profile-name {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -55,7 +61,7 @@
     margin: 0;
   }
   
-  .navbar__burger-button {
+  .user-navbar__burger-button {
     width: 44px;
     height: 44px;
     background-image: url(../../../images/burger-logo.svg);
@@ -67,22 +73,27 @@
     display: none;
   }
   
-  .navbar__burger-button:hover {
-    opacity: .8;
+  .user-navbar__burger-button:hover {
+    opacity: 0.6;
     cursor: pointer;
+    transition: opacity 0.3s ease;
   }
   
   @media (max-width: 770px) {
-    .navbar__links {
+    .user-navbar{
+      display: flex;
+      justify-content: flex-end;   
+    }
+    .user-navbar__links {
       display: none;
     }
   
-    .navbar__profile-link {
+    .user-navbar__profile-link {
       display: none;
     }
 
-    .navbar__burger-button {
-      display: block;
+    .user-navbar__burger-button {
+      display: flex;
     } 
   }
   

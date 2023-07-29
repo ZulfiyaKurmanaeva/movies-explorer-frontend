@@ -24,7 +24,7 @@ function Header() {
     <>
     {unauthorizedHader() && (<header className='header header_type_blue'>
       <div className='header__container'>
-          <Link to='/' className='header__logo-link' > <img src={logo} className='header__logo' alt='логотип'/></Link>
+          <Link to='/' className='header__logo-link' ><img src={logo} className='header__logo' alt='логотип'/></Link>
           <NewUserNavigation />
           </div>
       </header>)}

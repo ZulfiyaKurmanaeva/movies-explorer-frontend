@@ -22,11 +22,11 @@ function Register() {
             <label className='register__label'>Имя</label>
             <input className='register__input' required type="text" placeholder='Виталий' minLength="2" maxLength="40" />       
             <label className='register__label'>E-mail</label>
-            <input className='register__input' required type="email" placeholder='pochta@yandex.ru' />            
+            <input className='register__input' required type="email" placeholder='pochta@yandex.ru'/>            
             <label className='register__label'>Пароль</label>
             <input className='register__input register__input-password' required type="password" minLength="6" maxLength="16" placeholder='* * * * * * * * *'/>
             <span className='register__input-error'>Что-то пошло не так...</span>         
-            <button onClick={temporaryLogin} type='button'  className='register__submit-button'>Зарегистрироваться</button>
+            <button onClick={temporaryLogin} type='button' className='register__submit-button'>Зарегистрироваться</button>
           </form>
           <div className='register__correction'>
             <p className='register__correction-text'>Уже зарегистрированы?</p>

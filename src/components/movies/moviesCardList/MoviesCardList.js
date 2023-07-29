@@ -5,13 +5,8 @@ export default function MoviesCardList({isSavedMovies}) {
   return (
     <>
      <section className="movies">
-       <ul className="movies__container">
-        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
-        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
-        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
-        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
-        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
-        <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
+      <div className="movies__container">
+       <ul className="movies__list">
         <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
         <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
         <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
@@ -19,8 +14,9 @@ export default function MoviesCardList({isSavedMovies}) {
         <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
         <li><MoviesCard isSavedMovies={isSavedMovies}/></li>
        </ul>
+       </div>
        <div  className={isSavedMovies? 'movies__add_type_invisible' : 'movies__add'}>
-        <button type='button' className="movies__button">Еще</button>
+        <button type='button' className="movies__add-button">Еще</button>
        </div>
      </section>
     </>

@@ -13,16 +13,16 @@ function UserNavigation () {
     }
 
 	return (
-  <div className='navbar'>
-		<nav>
-      <div className='navbar__links'>
-      <NavLink to='/movies' className={location.pathname === '/movies' ? 'navbar__link navbar__link_type_active' : 'navbar__link'}>Фильмы</NavLink>
-      <NavLink to='/saved-movies' className={location.pathname === '/saved-movies' ? 'navbar__link navbar__link_type_active' : 'movies-navbar__link'}>Сохранённые фильмы</NavLink>
-      </div>
+  <div className='user-navbar'>
+    <nav className='user-navbar__links'>      
+      <NavLink to='/movies' className={location.pathname === '/movies' ? 'user-navbar__link user-navbar__link_type_active' : 'user-navbar__link'}>Фильмы</NavLink>
+      <NavLink to='/saved-movies' className={location.pathname === '/saved-movies' ? 'user-navbar__link user-navbar__link_type_active' : 'user-navbar__link'}>Сохранённые фильмы</NavLink>
     </nav>
-     <Link to='/profile' className='navbar__profile-link'><p className='navbar__profile-name'>Аккаунт</p></Link>
-    <button onClick={handleBurger} className='navbar__burger-button' type='button'></button>
-<Burger isOpened={isBurgerOpened} closeBurger={handleBurger} />
+    <div>
+    <Link to='/profile' className='user-navbar__profile-link'><p className='user-navbar__profile-name'>Аккаунт</p></Link>
+    <button onClick={handleBurger} className='user-navbar__burger-button' type='button'></button>
+    <Burger isOpened={isBurgerOpened} closeBurger={handleBurger} />
+    </div>
 </div>
 	);
 }
