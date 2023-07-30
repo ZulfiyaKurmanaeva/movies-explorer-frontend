@@ -21,9 +21,9 @@ function Login() {
         <div className='login__data'>
           <form className='login__form' >
             <label className='login__label'>E-mail</label>
-            <input className='login__input' required type="email" placeholder='pochta@yandex.ru' />            
+            <input className='login__input' type="email" placeholder='pochta@yandex.ru' minLength="2" maxLength="20" required />            
             <label className='login__label'>Пароль</label>
-            <input className='login__input' required type="password" minLength={8} maxLength={16} />            
+            <input className='login__input' type="password" minLength="2" maxLength="20" required />            
             <button onClick={temporaryLogin} type='button' className='login__submit-button'>Войти</button>
           </form>
           <div className='login__correction'>
