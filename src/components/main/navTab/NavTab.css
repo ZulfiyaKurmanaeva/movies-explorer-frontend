@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 24px 0px;
+  padding: 24px 70px;
   width: 100%;
   box-sizing: border-box;
   background-color: #272727;
@@ -35,15 +35,16 @@
 
 @media (max-width: 430px) {
   .nav-tab {
-    padding: 20px 0;
+    padding: 21px;
   }
 
   .nav-tab__links {
-    gap: 24px;    
+    gap: 28px;    
   }
 
   .nav-tab__link {
     font-size: 11px;
-    line-height: 16px;    
+    line-height: 16px;
+    letter-spacing: +0.01em;   
   }
 }

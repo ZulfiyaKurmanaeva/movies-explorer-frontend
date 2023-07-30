@@ -21,6 +21,7 @@
     font-size: 13px;
     line-height: 18px;
     text-decoration: none;
+    letter-spacing: +0.03em;
   }
   
   .user-navbar__link:hover {
@@ -97,5 +98,11 @@
     } 
   }
   
+  @media (max-width: 470px) {
+    .user-navbar__burger-button {
+      width: 38px;
+      height: 38px;      
+    }
+   }
   
  

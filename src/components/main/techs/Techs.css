@@ -1,6 +1,6 @@
 .techs {
     margin: 0;
-    padding: 100px 70px;   
+    padding: 90px 70px;   
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -48,7 +48,7 @@
     line-height: 20px;
     text-align: center;    
     color: #fff;
-    margin: 26px auto 100px;
+    margin: 30px auto 100px;
     max-width: 460px;
   }
   
@@ -91,7 +91,7 @@
     }
   
     .techs__description {
-      margin: 20px 0 85px;
+      margin: 25px 0 85px;
       font-size: 12px;
       line-height: 18px;
     }
@@ -103,10 +103,9 @@
   }
   
   @media (max-width: 470px) {
-  
     .techs {
       margin: 0 auto;
-      padding: 70px 18px;
+      padding: 45px 18px;
     }
 
     .techs__container {
@@ -121,18 +120,24 @@
   
     .techs__title {
       font-size: 30px;
-      margin-top: 60px;
+      margin-top: 50px;
     }
   
     .techs__description {
       font-size: 11px;
       line-height: 16px;
-      margin-top: 25px;
+      margin-top: 12px;
       margin-bottom: 50px;
     }
     
     .techs__items {
       padding: 0 50px;
       justify-content: start;
+    }
+
+    .techs__item {
+      font-size: 12px;
+      height: 57px;
+      letter-spacing: -0.04em;
     }
   }

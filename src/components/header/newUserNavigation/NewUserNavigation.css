@@ -27,6 +27,7 @@
   .header-buttons__button_type_signin {   
     color: #fff;
     background-color: inherit;
+    letter-spacing: +0.05em;
   }
    
   .header-buttons__button_type_login {
@@ -44,10 +45,12 @@
       height: 25px;
       font-size: 10px;
       line-height: 16px;
+      letter-spacing: -0.01em;
+      padding: 0;
     }
   
     .header-buttons {
-      gap: 14px;
+      gap: 8px;
     }
   
     .header-buttons__button_type_signin {

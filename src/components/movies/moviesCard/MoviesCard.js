@@ -7,7 +7,7 @@ export default function MoviesCard({isSavedMovies}) {
   // в дальнейшем будет добавлено переключение лайка
   return (
        <div className="movie-card">
-       <img src={moviePic} alt="постер" />
+       <img className="movie-card__image" src={moviePic} alt="постер" />
       <div className="movie-card__description">
         <div>
           <h2 className="movie-card__title">Книготорговцы</h2>

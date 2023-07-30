@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content:flex-start;
-  height: 100vh;
+  min-height: 100vh;
   padding: 70px 0;
   width: 100%;
   margin: 0;
@@ -14,7 +14,8 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
-  max-width: 410px;
+  padding: 0;
+  max-width: 400px;
   width: 100%;
 }
 
@@ -27,7 +28,7 @@
 
 .register__logo {
   width: 38px;
-  height: 38px;
+  height: 38px;  
 }
 
 .register__logo:hover {
@@ -40,14 +41,16 @@
   font-weight: 500;
   font-size: 24px;
   color: #fff;
-  margin-top: 40px;
+  margin: 33px 0 0;
+  letter-spacing: +0.04em;
+  padding: 5px;
 }
 
 .register__data {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 19px 0;
+  padding: 40px 0;
   width: 100%;    
 }
 
@@ -61,11 +64,11 @@
   color: #8B8B8B;
   display: flex;
   text-align: start;
-  margin-bottom: 3px;
+  margin: 5px 0 8px;
 }
 
 .register__input {
-  height: 46px;
+  height: 44px;
   font-weight: 400;
   font-size: 14px;
   color: #fff;
@@ -109,8 +112,9 @@
   border: 0;
   width: 100%;
   height: 45px;
-  margin-top: 80px;
+  margin-top: 70px;
   border-radius: 3px;
+  letter-spacing: +0.05em;
 }
 
 .register__submit-button:hover {
@@ -134,12 +138,14 @@
   color: #8B8B8B;
   margin: 0;
   padding: 0;
+  letter-spacing: +0.05em;
 }
 
 .register__link-signin {   
   color: #4285F4;
   padding: 0;
   margin: 0;
+  letter-spacing: +0.05em;
 }
 
 .register__link-signup:hover {
@@ -149,9 +155,16 @@
 }
 
 @media (max-width: 770px) {
-    
+  .register {
+    padding: 232px 0;    
+  }
+
   .register__container{
     max-width: 396px;
+  }
+
+  .register__data {
+    padding: 33px 0;    
   }
 
   .register__title {
@@ -169,12 +182,13 @@
 
   @media (max-width: 470px) {
     .register {
-      padding: 55px 30px 30px;      
+      padding: 55px 0 10px;
+      justify-content: center;     
     }
     
+        
     .register__container{
-      max-width: 260px;
-      
+      max-width: 260px;      
     }
 
     .register__header {
@@ -183,8 +197,16 @@
       align-items:center;
       align-self: center;
     }
+
+    .register__title {
+      margin: 43px 0 0;      
+    }
+
+    .register__data {
+      padding: 75px 0 10px;    
+    }
    
     .register__submit-button {
-      margin-top: 157px;
+      margin-top: 155px;
      }
     }

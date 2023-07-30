@@ -41,14 +41,15 @@
   }
 
   .header__container {
-    max-width: 668px;
+    max-width: 708px;
+    margin: 0;
   }
 
 }
 
 @media (max-width: 470px) {
   .header {
-    padding: 15px 14px;
+    padding: 19px 14px;
   }
 
   .header__container {
