@@ -78,6 +78,7 @@
     .checkbox {
         padding: 50px 10px;
         justify-content: center;
+        border-left: none;
     }
 
     .checkbox__text {
