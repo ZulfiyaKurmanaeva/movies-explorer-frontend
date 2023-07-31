@@ -1,6 +1,6 @@
 .techs {
     margin: 0;
-    padding: 90px 70px;   
+    padding: 90px 70px 95px;   
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -48,7 +48,7 @@
     line-height: 20px;
     text-align: center;    
     color: #fff;
-    margin: 30px auto 100px;
+    margin: 28px auto 100px;
     max-width: 460px;
   }
   
@@ -85,20 +85,26 @@
     .techs__container{
       max-width: 668px;
     }
+
+    .techs__header {
+      margin: 21px 0;
+    }
   
     .techs__title {
       margin: 80px 0 0;
     }
   
     .techs__description {
-      margin: 25px 0 85px;
+      margin: 23px 0 85px;
       font-size: 12px;
       line-height: 18px;
     }
   
     .techs__item {
-      width: 85px;
-      height: 60px;
+      width: 84px;
+      height: 58px;
+      font-size: 12px;
+      letter-spacing: -0.04em;
     }
   }
   

@@ -22,7 +22,7 @@
     font-size: 22px;
     line-height: 27px;
     align-self: start;
-    margin: 18px 0;
+    margin: 21px 0;
     text-align: left;
   }
   
@@ -107,7 +107,7 @@
   
   @media (max-width: 770px) {
     .project {
-      padding: 78px 50px;
+      padding: 70px 50px 78px;
     }
 
     .project__container{

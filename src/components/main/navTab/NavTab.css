@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 24px 70px;
+  padding: 23px 70px;
   width: 100%;
   box-sizing: border-box;
   background-color: #272727;
@@ -24,7 +24,8 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
-  text-decoration-line: underline;    
+  text-decoration-line: underline;
+  letter-spacing: +0.04em;   
 }
 
 .nav-tab__link:hover {

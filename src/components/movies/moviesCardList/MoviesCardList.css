@@ -4,15 +4,16 @@
 	justify-content: center;
 	align-items: center;
     margin: 0;
-    padding: 0 70px;
+    padding: 10px 70px 0;
     width: 100%;
-    box-sizing: border-box;	
+    box-sizing: border-box;
+	min-height: 100vh;	
 }
 
 .movies__container{
 	display: flex;
     flex-direction: column;
-    padding: 90px 0 0;
+    padding: 80px 0 0;
     margin: 0 auto;
     max-width: 1140px;
     width: 100%;
@@ -23,7 +24,8 @@
 	display: grid;
 	width: 100%;
 	justify-content: center;
-	grid-template-columns: repeat(3, 360px);
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(203px, 1fr));
 	gap: 37px 27px;	
 	list-style-type: none;
 	padding: 0;
@@ -63,58 +65,65 @@
 
 @media screen and (max-width: 1180px) {
 	.movies {
-		padding: 0 30px;		
-	}
-	
-	.movies__list {		
-		grid-template-columns: repeat(2, 339px);
-		gap: 28px 27px;	
-	}
+		padding: 0 30px;
+	}	
 }
 
 @media screen and (max-width: 770px) {
+	.movies__list {
+		grid-template-columns: repeat(auto-fit, minmax(339px, 1fr));
+    	
+		gap: 28px 27px;
+		overflow: hidden;
+	}	
+	
 	.movies__container{
 	padding: 75px 0 0 0;
-	max-width: 708px;
-}
-	.movies__list {		
-		grid-template-columns: repeat(2, 339px);
-		gap: 28px 27px;	
-	}
-	
+	max-width: 708px;	
+}	
 	.movies__button {
 		width: 240px;
 	}
 	
-.movies__add {
+  .movies__add {
 	margin: 80px 0 58px;
 }
 
 .movies__add_type_invisible{
 	margin: 57px 0;
-}
+}	
+
 }
 
 @media screen and (max-width: 755px) {
 	.movies__list {
-		grid-template-columns: repeat(2, 300px);		
+		grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));		
 	}	
-}
-@media screen and (max-width: 605px) {
-	.movies__list {
-		grid-template-columns: repeat(1, 300px);		
-	}
-	.movies__container{
-		padding: 67px 0 0px;		
-	}
 }
 
 @media screen and (max-width: 470px) {
+	.movies__container{
+		padding: 67px 0 0px;		
+	}
+	.movies__list {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    	gap: 16px;
+		overflow: hidden;
+	}	
+	
 	.movies {
 		padding: 0 10px 25px;		
 	}
 
-	.movies__list {
-		gap: 16px;			
-	}	
+	.movies__button {
+		width: 240px;
+		
+		
+	}
+	
+  .movies__add {
+	margin: 80px 0 58px;
+	width: 240px;
+}
+	
 }

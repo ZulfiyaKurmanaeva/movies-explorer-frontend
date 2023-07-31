@@ -42,7 +42,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: solid #424242;
-  padding: 20px 0 20px;
+  padding: 19px 0;
   text-align: initial;
 }
 
@@ -65,10 +65,14 @@
 
 @media (max-width: 770px) {
   .portfolio {
-    padding: 90px 50px 35px;
+    padding: 90px 50px 40px;
   }
   .portfolio__container {
     max-width: 668px;     
+  }
+
+  .portfolio__title {
+    margin: 0 0 17px;
   }
 
   .portfolio__link {
