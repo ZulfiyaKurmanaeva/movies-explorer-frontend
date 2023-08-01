@@ -42,7 +42,7 @@
     transition: opacity 0.3s ease;
   }
 
-  @media (max-width: 770px) {
+  @media (max-width: 800px) {
     .not-found {
       padding: 412px 0 235px;  
     }
@@ -52,7 +52,7 @@
     }   
   }
 
-  @media (max-width: 470px) {
+  @media (max-width: 500px) {
     .not-found {
       padding: 332px 0 30px;  
     }

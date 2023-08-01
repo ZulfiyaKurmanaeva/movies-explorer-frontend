@@ -63,7 +63,7 @@
   height: 20px;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 800px) {
   .portfolio {
     padding: 90px 50px 40px;
   }
@@ -86,9 +86,9 @@
   }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 500px) {
   .portfolio {
-    padding: 40px 14px;
+    padding: 42px 14px;
   }
 
   .portfolio__container {

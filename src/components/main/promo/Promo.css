@@ -32,7 +32,7 @@
     letter-spacing: -0.013em;
   }
   
-  @media (max-width: 770px) {
+  @media (max-width: 800px) {
     .promo {
       min-height: 788px;
       padding: 0 50px;
@@ -48,7 +48,7 @@
   }    
   }
     
-  @media (max-width: 460px) {
+  @media (max-width: 500px) {
     .promo {
       min-height: 570px;
       background-image: url('../../../images/promo_back-mini-logo.svg');

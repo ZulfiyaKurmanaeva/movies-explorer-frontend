@@ -2,9 +2,8 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 70px 0 70px;
-    max-width: 400px;
-    width: 100%;
+    padding: 70px 0 80px;
+    width: 396px;
     max-height: 100%;
   }
   
@@ -126,9 +125,9 @@
     transition: opacity 0.3s ease;
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: 800px) {
     .login {
-      padding: 230px 30px 55px;      
+      padding: 230px 30px 240px;      
     }  
     
     .login__title {
@@ -143,9 +142,9 @@
   
    @media (max-width: 500px) {
     .login {
-      padding: 55px 30px 55px;
-      max-width: 100%;
+      padding: 55px 0 15px;
       align-items: center;
+      max-width: 260px;
     }
     
      .login__header {

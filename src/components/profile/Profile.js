@@ -14,7 +14,6 @@ function Profile() {
       <Header />
       <main>   
       <section className='profile'>
-        <div className='profile__container'>     
         <h1 className="profile__title">Привет, Виталий!</h1>
         <form className="profile__form">
           <div className="profile__info">
@@ -27,8 +26,7 @@ function Profile() {
           </div>
           <button type='button' className="profile__button profile__button_type_edit">Редактировать</button>
           <button onClick={logout} type='button' className="profile__button profile__button_type_logout">Выйти из аккаунта</button>
-        </form>
-        </div>       
+        </form>        
       </section>
       </main>     
     </>

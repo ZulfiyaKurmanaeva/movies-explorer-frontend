@@ -26,6 +26,7 @@
     flex-direction: column;
     max-width: 600px;
     align-items: flex-start;
+    padding-right: 10px;
   }
 
   .about-me__avatar { 
@@ -89,7 +90,7 @@
    transition: opacity 0.3s ease;
   }  
   
-  @media (max-width: 770px) {
+  @media (max-width: 800px) {
     .about-me {
       padding: 110px 50px 0;
     }
@@ -125,7 +126,7 @@
     }
   }
   
-   @media (max-width: 510px) {
+   @media (max-width: 500px) {
     .about-me {
       margin: 0 auto;
       padding: 95px 14px 30px;

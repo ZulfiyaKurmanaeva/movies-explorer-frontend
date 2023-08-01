@@ -72,7 +72,7 @@
   transition: opacity 0.3s ease;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
   .search {
     padding: 80px 30px 110px;
   }
@@ -84,7 +84,7 @@
   
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 500px) {
   .search {
     padding: 80px 10px 45px;
   }

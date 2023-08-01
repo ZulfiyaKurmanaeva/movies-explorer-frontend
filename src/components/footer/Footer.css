@@ -61,7 +61,7 @@
    transition: opacity 0.3s ease;
   }
   
-  @media (max-width: 770px) {
+  @media (max-width: 800px) {
     .footer {
       padding: 80px 30px 20px;
     }
@@ -71,7 +71,7 @@
     }
   }
   
-  @media (max-width: 470px) {
+  @media (max-width: 500px) {
     .footer {
       padding: 55px 10px 40px;
     }

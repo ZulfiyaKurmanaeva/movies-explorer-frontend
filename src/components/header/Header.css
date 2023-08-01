@@ -35,7 +35,7 @@
   transition: opacity 0.3s ease;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 800px) {
   .header {
     padding: 15px 30px;
   }
@@ -47,7 +47,7 @@
 
 }
 
-@media (max-width: 470px) {
+@media (max-width: 500px) {
   .header {
     padding: 19px 14px;
   }
