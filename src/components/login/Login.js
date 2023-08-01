@@ -13,7 +13,6 @@ function Login() {
   return (
     <main>
       <section className='login'>
-        <div className='login__container'>
         <div className='login__header'>
           <Link to='/'><img className='login__logo' alt='логотип' src={logo} /></Link>
           <h1 className='login__title'>Рады видеть!</h1>
@@ -30,8 +29,7 @@ function Login() {
             <p className='login__correction-text'>Ещё не зарегистрированы?</p>
             <Link to='/signup' className='login__link-signup'>Регистрация</Link>
           </div>
-        </div>
-        </div>
+        </div>        
       </section>
     </main >
   )

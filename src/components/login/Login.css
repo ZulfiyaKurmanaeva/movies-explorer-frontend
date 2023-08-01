@@ -1,20 +1,8 @@
-.login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:flex-start;
-    min-height: 100%;
-    padding: 70px 0;
-    width: 100%;
-    margin: 0;
-  }
-
   .login__container{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     margin: 0 auto;
-    padding: 0;
+    padding: 70px 0 70px;
     max-width: 400px;
     width: 100%;
   }
@@ -137,38 +125,29 @@
     transition: opacity 0.3s ease;
   }
 
-  @media (max-width: 770px) {
+  @media (max-width: 780px) {
     .login {
-      padding: 233px 0;      
+      padding: 230px 30px 55px;      
     }  
     
-    .login__container{
-      max-width: 396px;
-    }
-  
     .login__title {
       font-size: 24px;
       }
       
       .login__input {
-        
         font-size: 13px;
-        
         letter-spacing: +0.02em;
       }    
     }
   
-   @media (max-width: 470px) {
+   @media (max-width: 500px) {
     .login {
-      padding: 55px 0 10px;
-      justify-content: center;    
+      padding: 55px 30px 55px;
+      max-width: 100%;
+      align-items: center;
     }
     
-    .login__container{
-      max-width: 260px;      
-    }
-
-    .login__header {
+     .login__header {
       display: flex;
       flex-direction: column;
       align-items:center;

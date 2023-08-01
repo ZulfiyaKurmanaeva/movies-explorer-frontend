@@ -1,7 +1,7 @@
 .page {
+  margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
-  margin: 0;
+  height: 100%;
   padding: 0;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,5 +12,6 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  justify-content: flex-start;
+  align-items: center;
 }

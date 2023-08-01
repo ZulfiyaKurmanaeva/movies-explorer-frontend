@@ -12,8 +12,7 @@ function Register() {
   return (
     <main>
       <section className='register'>
-        <div className='register__container'>
-        <div className='register__header'>
+       <div className='register__header'>
           <Link to='/'><img className='register__logo' alt='логотип' src={logo} /></Link>
           <h1 className='register__title'>Добро пожаловать!</h1>
         </div>
@@ -32,8 +31,7 @@ function Register() {
             <p className='register__correction-text'>Уже зарегистрированы?</p>
             <Link to='/signin' className='register__link-signin'>Войти</Link>
           </div>
-        </div>
-        </div>
+        </div>       
       </section>
     </main >
   )
