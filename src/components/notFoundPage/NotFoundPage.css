@@ -4,8 +4,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    background-color: inherit;   
+    height: 100%;
+    background-color: inherit;
+    padding: 250px 0 60px; 
   }
   
   .not-found__title {
@@ -22,7 +23,7 @@
     text-align: center;
     color: #fff;
     margin: 0 auto;
-    padding-top: 12px;
+    padding: 12px 0 0px;
     letter-spacing: +0.04em;
   }
   
@@ -43,17 +44,17 @@
 
   @media (max-width: 770px) {
     .not-found {
-      padding: 278px 0 20px;  
+      padding: 412px 0 235px;  
     }
 
     .not-found__subtitle {
-      padding-top: 8px;      
+      padding-top: 10px;      
     }   
   }
 
   @media (max-width: 470px) {
     .not-found {
-      padding: 320px 0 23px;  
+      padding: 332px 0 30px;  
     }
 
     .not-found__title {

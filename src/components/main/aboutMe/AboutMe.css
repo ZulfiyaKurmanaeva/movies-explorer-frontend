@@ -125,11 +125,11 @@
     }
   }
   
-   @media (max-width: 460px) {
+   @media (max-width: 510px) {
     .about-me {
       margin: 0 auto;
       padding: 95px 14px 30px;
-      max-width: 296px;
+      max-width: 320px;
       justify-content: center;
     }
 
@@ -140,6 +140,9 @@
 
     .about-me__avatar {
       max-width: 292px;
+      width: 100%;
+      max-height: 352px;
+      height: 100%;
     }
 
     .about-me__info {

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content:flex-start;
-    min-height: 100vh;
+    min-height: 100%;
     padding: 70px 0;
     width: 100%;
     margin: 0;
@@ -79,7 +79,7 @@
     margin: 0 0 20px 0;
     border-radius: 8px;
     box-sizing: border-box;
-    letter-spacing: +0.08em;
+    letter-spacing: +0.03em;
   }
 
   .login__input:focus {
@@ -149,18 +149,13 @@
     .login__title {
       font-size: 24px;
       }
-
+      
       .login__input {
-        letter-spacing: +1em;
+        
+        font-size: 13px;
+        
+        letter-spacing: +0.02em;
       }    
-
-    .login__correction {
-      font-size: 13px;
-      }
-   
-    .login__submit-button {
-      font-size: 12px;
-     }
     }
   
    @media (max-width: 470px) {
@@ -190,6 +185,13 @@
    
     .login__submit-button {
       margin-top: 248px;
+     }
+     .login__correction {
+      font-size: 13px;
+      }
+   
+    .login__submit-button {
+      font-size: 12px;
      }
 
     .login__correction {

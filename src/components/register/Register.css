@@ -41,7 +41,7 @@
   font-weight: 500;
   font-size: 24px;
   color: #fff;
-  margin: 33px 0 0;
+  margin: 32px 0 0;
   letter-spacing: +0.04em;
   padding: 5px;
 }
@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px 0;
+  padding: 33px 0;
   width: 100%;    
 }
 
@@ -156,7 +156,7 @@
 
 @media (max-width: 770px) {
   .register {
-    padding: 232px 0;    
+    padding: 232px 0 135px;    
   }
 
   .register__container{
@@ -169,23 +169,15 @@
 
   .register__title {
     font-size: 24px;
-    }
-
-  .register__correction {
-    font-size: 13px;
-    }
- 
-  .register__submit-button {
-    font-size: 12px;
-   }
+    }  
+   
   }
 
   @media (max-width: 470px) {
     .register {
       padding: 55px 0 10px;
       justify-content: center;     
-    }
-    
+    }    
         
     .register__container{
       max-width: 260px;      
@@ -208,5 +200,14 @@
    
     .register__submit-button {
       margin-top: 155px;
-     }
+      font-size: 12px;
+     } 
+    
+    .register__correction-text {
+      font-size: 12px;      
+    }
+    
+    .register__link-signin {   
+      font-size: 12px;
+    }
     }
