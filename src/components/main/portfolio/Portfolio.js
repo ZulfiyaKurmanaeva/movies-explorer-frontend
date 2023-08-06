@@ -16,7 +16,7 @@ function Portfolio() {
             <span>Адаптивный сайт</span>
             <img className='portfolio__icon' src={linkArrow} alt="стрелка"/>
           </Link></li>
-          <li><Link to='https://github.com/ZulfiyaKurmanaeva/react-mesto-api-full-gha/' target="_blank" rel="noreferrer" className='portfolio__link portfolio__link_type_last'>
+          <li><Link to='https://uno.nomoredomains.rocks/' target="_blank" rel="noreferrer" className='portfolio__link portfolio__link_type_last'>
             <span>Одностраничное приложение</span>
             <img className='portfolio__icon' src={linkArrow} alt="стрелка"/>
           </Link></li>

@@ -9,6 +9,43 @@ function Header() {
   const location = useLocation();
 
   const unauthorizedHader = () => {
+    return location.pathname === '/' && localStorage.getItem("jwt") === null;
+  };
+
+  const authorizedHeader = () => {    
+    return (
+      (location.pathname === "/movies" ||
+      location.pathname === "/saved-movies" ||
+      location.pathname === "/profile" ||
+      location.pathname === '/') && localStorage.getItem("jwt") !== null
+    );
+  };  
+
+  return (
+    <>
+    {unauthorizedHader() && (<header className='header header_type_blue'>
+      <div className='header__container'>
+          <Link to='/' className='header__logo-link' ><img src={logo} className='header__logo' alt='логотип'/></Link>
+          <NewUserNavigation />
+          </div>
+      </header>)}
+
+      {authorizedHeader() && (<header className='header'>
+      <div className='header__container'>
+          <Link to='/' className='header__logo-link' > <img src={logo} className='header__logo' alt='логотип'/></Link>
+          <UserNavigation />
+          </div>       
+      </header >)}
+      </>
+  )
+}
+
+export default Header;
+
+/*function Header() {
+  const location = useLocation();
+
+  const unauthorizedHader = () => {
     return location.pathname === '/';
   };
 
@@ -39,4 +76,4 @@ function Header() {
   )
 }
 
-export default Header;
+export default Header;*/

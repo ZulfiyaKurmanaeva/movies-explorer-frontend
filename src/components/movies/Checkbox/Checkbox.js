@@ -2,7 +2,18 @@ import React from 'react';
 
 import './Checkbox.css';
 
-function Checkbox () {
+function Checkbox ({short, setShort}) {
+    return (        
+        <div className='checkbox'>
+         <input className='checkbox__input' type='checkbox' checked={short} onChange={e => setShort(e.target.checked)}/>        
+         <p className='checkbox__text'>Короткометражки</p>
+        </div>       
+    );
+}
+
+export default Checkbox;
+
+/*function Checkbox () {
     return (        
         <div className='checkbox'>
          <input className='checkbox__input' type='checkbox'></input>        
@@ -11,4 +22,4 @@ function Checkbox () {
     );
 }
 
-export default Checkbox;
+export default Checkbox;*/
