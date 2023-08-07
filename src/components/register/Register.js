@@ -1,8 +1,9 @@
 import './Register.css'
 import logo from '../../images/header__logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {login, register} from "../../utils/MainApi";
+import LoggedInUserContext from "../../contexts/LoggedInUserContext";
 
 function Register() {
   const navigate = useNavigate();
@@ -13,7 +14,8 @@ function Register() {
   const [error, setError] = useState(false);
   const nameValid = () => name.match(/[a-zA-Zа-яА-я0-9 ]+/) && name.length >= 2;
   const emailValid = () => email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  const passwordValid = () => password.match(/[^ ]+/)
+  const passwordValid = () => password.match(/[^ ]+/);
+  const [, setLoggedIn] = useContext(LoggedInContext);
       
   return (
       <main>
@@ -29,6 +31,7 @@ function Register() {
                             try {
                                 await register(name, email, password);
                                 const result = await login(email, password);
+                                setLoggedIn(true);
                                 localStorage.setItem("jwt", result.token);
                                 navigate('/movies');
                             } catch (e) {

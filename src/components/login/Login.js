@@ -2,13 +2,15 @@ import './Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../images/header__logo.svg';
 import {login} from "../../utils/MainApi";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import LoggedInUserContext from "../../contexts/LoggedInUserContext";
 
 function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
+    const [, setLoggedIn] = useContext(LoggedInContext);
     
     return (
         <main>
@@ -23,6 +25,7 @@ function Login() {
                         try {
                             console.log(email, password)
                             const result = await login(email, password);
+                            setLoggedIn(true);
                             localStorage.setItem("jwt", result.token)
                             navigate('/movies');
                         } catch {

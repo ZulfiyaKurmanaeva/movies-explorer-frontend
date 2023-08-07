@@ -7,21 +7,21 @@ import Login from '../login/Login';
 import Profile from '../profile/Profile';
 import NotFoundPage from '../notFoundPage/NotFoundPage';
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import LoggedInUserContext from "../../contexts/LoggedInUserContext";
 import {useEffect, useState} from "react";
 import {getUser} from "../../utils/MainApi";
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt") !== null);
   const [user, setUser] = useState({});
   useEffect(() => {
-    const i = setInterval(() =>
-    setLoggedIn(localStorage.getItem("jwt") !== null), 50);
     getUser().then(setUser);
   }, []);
   
   return (
     <div className="page">
       <CurrentUserContext.Provider value={user}>
+      <LoggedInUserContext.Provider value={[loggedIn, setLoggedIn]}>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/movies' element={<ProtectedRoute loggedIn={loggedIn}><Movies saved={false}/></ProtectedRoute>} />
@@ -31,6 +31,7 @@ export default function App() {
         <Route path='/signin' element={<Login />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
+      </LoggedInUserContext.Provider>
       </CurrentUserContext.Provider>
     </div>
   );
