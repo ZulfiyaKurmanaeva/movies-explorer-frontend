@@ -6,7 +6,7 @@ import Register from '../register/Register';
 import Login from '../login/Login';
 import Profile from '../profile/Profile';
 import NotFoundPage from '../notFoundPage/NotFoundPage';
-import CurrentUserContext from "./CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import {useEffect, useState} from "react";
 import {getUser} from "../../utils/MainApi";
 
