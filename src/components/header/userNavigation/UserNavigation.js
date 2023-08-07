@@ -19,7 +19,9 @@ function UserNavigation () {
       <NavLink to='/saved-movies' className={location.pathname === '/saved-movies' ? 'user-navbar__link user-navbar__link_type_active' : 'user-navbar__link'}>Сохранённые фильмы</NavLink>
     </nav>
     <div>
+    <div className='user-navbar__profile-button'>
     <Link to='/profile' className='user-navbar__profile-link'><p className='user-navbar__profile-name'>Аккаунт</p></Link>
+    </div>
     <button onClick={handleBurger} className='user-navbar__burger-button' type='button'></button>
     <Burger isOpened={isBurgerOpened} closeBurger={handleBurger} />
     </div>

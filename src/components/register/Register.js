@@ -42,7 +42,7 @@ function Register() {
                       <label className='register__label'>Имя</label>
                       <input className='register__input' type="text" placeholder='Виталий' 
                              maxLength="20" value={name} onChange={e => setName(e.target.value)} />
-                      {!(nameValid()) && <span className='register__input-error'>Имя может содержать только буквы, цифры и пробел (мин. 2 символа)</span>}
+                      {!(nameValid()) && <span className='register__input-error'>Имя может содержать только буквы, цифры и пробел (не менее 2-х символов)</span>}
                       <label className='register__label'>E-mail</label>
                       <input className='register__input' type="email" placeholder='pochta@yandex.ru'
                              maxLength="30" value={email} onChange={e => setEmail(e.target.value)} />

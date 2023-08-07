@@ -46,7 +46,7 @@ function Profile() {
                             <input className='profile__input-field' type='text' required minLength="2" maxLength="40"
                                    placeholder='Виталий' value={name} onChange={e => setName(e.target.value)}/>
                         </div>
-                        {!(nameValid()) && <span className='register__input-error'>Имя может содержать только буквы, цифры и пробел (мин. 2 символа)</span>}
+                        {!(nameValid()) && <span className='register__input-error'>Имя может содержать только буквы, цифры и пробел (не менее 2-х символов)</span>}
                         <div className="profile__info">
                             <label className="profile__input-title">E-mail</label>
                             <input className="profile__input-field" type='email' required

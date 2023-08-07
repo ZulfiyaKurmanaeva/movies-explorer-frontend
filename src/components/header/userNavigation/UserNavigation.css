@@ -34,17 +34,21 @@
     font-weight: 500;
     font-size: 14px;    
   }
-  
-  .user-navbar__profile-link {
+
+  .user-navbar__profile-button {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     width: 100px;
     height: 32px;
-    background-color: #313131;
-    border-radius: 33%;
+    background-color: #313131;    
     align-self: flex-end;
+    border-radius: 33px;
+  }
+  
+  .user-navbar__profile-link {
+    text-decoration: none;
   }
   
   .user-navbar__profile-link:hover {
@@ -89,7 +93,7 @@
       display: none;
     }
   
-    .user-navbar__profile-link {
+    .user-navbar__profile-button {
       display: none;
     }
 
