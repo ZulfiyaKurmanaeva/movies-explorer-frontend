@@ -10,7 +10,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const [, setLoggedIn] = useContext(LoggedInContext);
+    const [, setLoggedIn] = useContext(LoggedInUserContext);
     
     return (
         <main>
