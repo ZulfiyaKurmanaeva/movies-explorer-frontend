@@ -25,20 +25,3 @@ function Movies({saved}) {
 }
 
 export default Movies;
-
-
-/*function Movies() {
-
-  return (
-    <>
-      <Header />
-      <main>
-        <SearchForm />
-        <MoviesCardList />
-      </main>
-      <Footer />
-    </>
-  )
-}
-
-export default Movies;*/
