@@ -27,16 +27,19 @@
     letter-spacing: +0.04em;
   }
   
-  .not-found__link {
+  .not-found__button {
+    background-color: inherit;
     font-weight: 400;
     font-size: 14px;
     text-align: center;
     color: #4285F4;
     text-decoration: none;
-    margin-top: 184px;    
+    margin-top: 184px;
+    outline: none;
+    border: none;
   }
   
-  .not-found__link:hover {
+  .not-found__button:hover {
     opacity: 0.6;
     cursor: pointer;
     transition: opacity 0.3s ease;
@@ -66,7 +69,7 @@
       padding-top: 13px;
     }
   
-    .not-found__link {
+    .not-found__button {
       font-size: 12px;      
       margin-top: 285px;
     }
