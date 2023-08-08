@@ -3,6 +3,8 @@ import Header from '../header/Header';
 import {useNavigate } from 'react-router-dom';
 import {useEffect, useState} from "react";
 import {getUser, userEdit} from "../../utils/MainApi";
+import {EMAIL_PATTERN} from '../../utils/constants';
+import {NAME_PATTERN} from '../../utils/constants';
 
 function Profile() {
     const logoutNavigate = useNavigate();
@@ -15,8 +17,8 @@ function Profile() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [error, setError] = useState(false);
-    const nameValid = () => name.match(/^[a-zA-Zа-яА-я0-9 ]+$/) && name.length >= 2;
-    const emailValid = () => email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    const nameValid = () => name.match(NAME_PATTERN) && name.length >= 2;
+    const emailValid = () => email.toLowerCase().match(EMAIL_PATTERN);
 
 
     useEffect(() => {

@@ -4,6 +4,9 @@ import logo from '../../images/header__logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import {useContext, useState} from "react";
 import {login, register} from "../../utils/MainApi";
+import {EMAIL_PATTERN} from '../../utils/constants';
+import {NAME_PATTERN} from '../../utils/constants';
+import {PASSWORD_PATTERN} from '../../utils/constants';
 
 function Register() {
   const navigate = useNavigate();
@@ -12,9 +15,9 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const nameValid = () => name.match(/[a-zA-Zа-яА-я0-9 ]+/) && name.length >= 2;
-  const emailValid = () => email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  const passwordValid = () => password.match(/[^ ]+/);
+  const nameValid = () => name.match(NAME_PATTERN) && name.length >= 2;
+  const emailValid = () => email.toLowerCase().match(EMAIL_PATTERN);
+  const passwordValid = () => password.match(PASSWORD_PATTERN) && password.length >= 4;
   const [, setLoggedIn] = useContext(LoggedInUserContext);
       
   return (
