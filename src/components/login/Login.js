@@ -11,6 +11,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [loggedIn, setToken] = useContext(LoggedInUserContext);
+    const [block, setBlock] = useState(false);
     
     return (
         <main>
@@ -22,6 +23,7 @@ function Login() {
                 <div className='login__data'>
                     <form className='login__form' onSubmit={async e => {
                         e.preventDefault();
+                        setBlock(true);
                         try {
                             console.log(email, password)
                             const result = await login(email, password);
@@ -29,6 +31,7 @@ function Login() {
                         } catch {
                             setError(true);
                         }
+                        setBlock(false);
                     }}>
                         <label className='login__label'>E-mail</label>
                         <input className='login__input' type="email" placeholder='pochta@pochta.ru' minLength="2"
@@ -37,7 +40,7 @@ function Login() {
                         <input className='login__input' type="password" placeholder='пароль' minLength="2"
                                maxLength="20" value={password} onChange={e => setPassword(e.target.value)} required/>
                         {error && <span className='register__input-error'>Неправильная почта или пароль</span>}
-                        <button type='submit' className='login__submit-button'>Войти</button>
+                        <button type='submit' className='login__submit-button' disabled={email === "" || password === "" || block}>Войти</button>
                     </form>
                     <div className='login__correction'>
                         <p className='login__correction-text'>Ещё не зарегистрированы?</p>
@@ -50,3 +53,4 @@ function Login() {
 }
 
 export default Login;
+

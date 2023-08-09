@@ -23,7 +23,7 @@ export const login = (email, password) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({email, password})
+        body: JSON.stringify({ email, password })
     }).then(checkResponse)
 };
 
@@ -63,7 +63,7 @@ export function tokencheck() {
     }).then(checkResponse)
 }
 
-export function saveMovie(movie){
+export function saveMovie(movie) {
     return fetch(`${BASE_URL}/movies`, {
         method: 'POST',
         headers: {
@@ -75,7 +75,7 @@ export function saveMovie(movie){
     }).then(checkResponse)
 }
 
-export function getSavedMovies(){
+export function getSavedMovies() {
     return fetch(`${BASE_URL}/movies`, {
         headers: {
             'Accept': 'application/json',
@@ -84,7 +84,7 @@ export function getSavedMovies(){
     }).then(checkResponse)
 }
 
-export function deleteSavedMovie(movieId){
+export function deleteSavedMovie(movieId) {
     return fetch(`${BASE_URL}/movies/${movieId}`, {
         method: "DELETE",
         headers: {

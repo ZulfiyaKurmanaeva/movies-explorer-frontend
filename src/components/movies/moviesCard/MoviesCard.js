@@ -1,48 +1,29 @@
+import { useContext } from 'react';
 import './MoviesCard.css'
-import React, {useEffect, useState} from 'react';
-import {deleteSavedMovie, getSavedMovies, saveMovie} from "../../../utils/MainApi";
+import MoviesContext from '../../../contexts/MoviesContext';
 
-export default function MoviesCard({isSavedMovies, movies, updatetMovies}) {
-    const [savedMovies, setSavedMovies] = useState([]);
-    useEffect(() => {
-        getSavedMovies().then(setSavedMovies);
-    }, []);
+export default function MoviesCard({movie, isSavedMovies }) {
+    const context = useContext(MoviesContext);
     return (
-        <>
-            {movies.map((movie, i) => (
-                <li className="movie-card" key={i}>
-                        <img className="movie-card__image" src={movie.image}
-                             alt={`${movie.nameRU}`} onClick={() => window.open(movie.trailerLink, "_blank")}/>
-                        <div className="movie-card__description">
-                            <div>
-                                <h1 className="movie-card__title">{movie.nameRU}</h1>
-                                <p className="movie-card__duration">
-                                    {(movie.duration > 60 ? Math.floor(movie.duration / 60) + " ч. " : "") + movie.duration % 60 + " мин."}</p>
-                            </div>
-                            <button type='button'
-                                    className={isSavedMovies ? 'movie-card__remove' : (
-                                        'movie-card__like ' + (savedMovies.some(x => x.movieId === movie.movieId) ? 'movie-card__like_active' : ''))}
-                                    onClick={async e => {
-                                        e.preventDefault();
-                                        if (isSavedMovies || savedMovies.some(x => x.movieId === movie.movieId)) {
-                                            await deleteMv(movie)
-                                        } else {
-                                            await saveMovie(movie);
-                                        }
-                                        setTimeout(() => {
-                                            getSavedMovies().then(setSavedMovies);
-                                            updatetMovies();
-                                        }, 200);
-                                    }}></button>
-                        </div>
-                </li>
-            ))}
-        </>
-    );
-    
-    
-    async function deleteMv(movie){
-        const id = savedMovies.find(x => x.movieId === movie.movieId)._id;
-        await deleteSavedMovie(id);
-    }
-}
+    <li className="movie-card">
+        <img className="movie-card__image" src={movie.image} alt={`${movie.nameRU}`} onClick={() => window.open(movie.trailerLink, "_blank")}/>
+            <div className="movie-card__description">
+                <div>
+                    <h1 className="movie-card__title">{movie.nameRU}</h1>
+                    <p className="movie-card__duration">{(movie.duration > 60 ? Math.floor(movie.duration / 60) + " ч. " : "") + movie.duration % 60 + " мин."}</p>
+                </div>
+                {isSavedMovies
+                ? <button type='button'
+                    className={'movie-card__remove'}
+                    onClick={() => context.delete(movie)}></button>
+                : context.saved === undefined || context.saved.every(mov => mov.movieId !== movie.movieId)
+                    ? <button type='button'
+                        className={'movie-card__like'}
+                        onClick={() => context.save(movie)}></button>
+                    : <button type='button'
+                        className={'movie-card__like movie-card__like_active'}
+                        onClick={() => context.delete(movie)}></button>}
+            </div>
+    </li>            
+    )
+ }
