@@ -10,7 +10,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const [, setLoggedIn] = useContext(LoggedInUserContext);
+    const [loggedIn, setToken] = useContext(LoggedInUserContext);
     
     return (
         <main>
@@ -25,15 +25,13 @@ function Login() {
                         try {
                             console.log(email, password)
                             const result = await login(email, password);
-                            setLoggedIn(true);
-                            localStorage.setItem("jwt", result.token)
-                            navigate('/movies');
+                            setToken(result.token);                            
                         } catch {
                             setError(true);
                         }
                     }}>
                         <label className='login__label'>E-mail</label>
-                        <input className='login__input' type="email" placeholder='pochta@yandex.ru' minLength="2"
+                        <input className='login__input' type="email" placeholder='pochta@pochta.ru' minLength="2"
                                maxLength="20" value={email} onChange={e => setEmail(e.target.value)} required/>
                         <label className='login__label'>Пароль</label>
                         <input className='login__input' type="password" placeholder='пароль' minLength="2"

@@ -1,32 +1,33 @@
 import './Profile.css'
 import Header from '../header/Header';
 import {useNavigate } from 'react-router-dom';
-import {useEffect, useState} from "react";
+import { useContext, useEffect, useState} from "react";
 import {getUser, userEdit} from "../../utils/MainApi";
 import {EMAIL_PATTERN, NAME_PATTERN, NAME_ERROR_PATTERN, EMAIL_ERROR_PATTERN} from '../../utils/constants';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
+import LoggedInUserContext from '../../contexts/LoggedInUserContext';
 
 function Profile() {
     const logoutNavigate = useNavigate();
+    const [, setToken] = useContext(LoggedInUserContext);
 
     const logout = () => {
-        localStorage.clear();
+        setToken(undefined);
         logoutNavigate('/');
     };
 
+    const user = useContext(CurrentUserContext);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [error, setError] = useState(false);
     const nameValid = () => name.match(NAME_PATTERN) && name.length >= 2;
     const emailValid = () => email.toLowerCase().match(EMAIL_PATTERN);
 
-
     useEffect(() => {
-        getUser().then(user => {
-            setName(user.name);
-            setEmail(user.email);
+            setName(user.name?? "");
+            setEmail(user.email?? "");
         })
-    }, []);
-
+    
     return (
         <>
             <Header/>
@@ -38,7 +39,6 @@ function Profile() {
                         try {
                             await userEdit(name, email);
                         } catch(e) {
-                            console.log(e);
                             setError(true);
                         }
                     }}>
@@ -58,7 +58,7 @@ function Profile() {
                             <span className='register__input-error'>{EMAIL_ERROR_PATTERN}</span>}
                         {error && <span className='register__input-error'>Что-то пошло не так...</span>}
                         <button type='submit' className="profile__button profile__button_type_edit"
-                                disabled={!(emailValid()) || !(nameValid())}>Редактировать
+                                disabled={!(emailValid()) || !(nameValid())|| name === user.name && email === user.email}>Редактировать
                         </button>
                         <button onClick={logout} type='button'
                                 className="profile__button profile__button_type_logout">Выйти из аккаунта

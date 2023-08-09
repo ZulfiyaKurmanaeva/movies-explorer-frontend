@@ -89,6 +89,17 @@
   display: flex;
   width: 100%;
   }
+
+  .register__input-ok {
+    margin: 0;
+    padding: 0;
+    color: #60ff40;
+    font-weight: 400;
+    font-size: 10px;
+    text-align: left;
+    display: flex;
+    width: 100%;
+}
   
 .register__submit-button {
   background: #4285F4;
@@ -104,7 +115,11 @@
   letter-spacing: +0.05em;
 }
 
-.register__submit-button:hover {
+.register__submit-button:disabled {
+  background-color: #8B8B8B;
+}
+
+.register__submit-button:hover:not(:disabled) {
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.3s ease;
