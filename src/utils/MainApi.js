@@ -14,7 +14,7 @@ export const register = (name, email, password) => {
             password
 
         })
-    }).then(res => checkResponse(res))
+    }).then(checkResponse)
 };
 
 export const login = (email, password) => {
@@ -24,7 +24,7 @@ export const login = (email, password) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({email, password})
-    }).then(res => checkResponse(res))
+    }).then(checkResponse)
 };
 
 export const userEdit = (name, email) => {
@@ -39,7 +39,7 @@ export const userEdit = (name, email) => {
             'name': name,
             'email': email,
         })
-    }).then(res => checkResponse(res))
+    }).then(checkResponse)
 };
 
 export const getUser = () => {
@@ -49,7 +49,7 @@ export const getUser = () => {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + localStorage.getItem('jwt'),
         },
-    }).then(res => res.json())
+    }).then(checkResponse)
 };
 
 export function tokencheck() {
@@ -60,7 +60,7 @@ export function tokencheck() {
             'Content-Type': 'application/json',
             authorization: "Bearer " + localStorage.getItem('jwt'),
         }
-    }).then(res => checkResponse(res))
+    }).then(checkResponse)
 }
 
 export function saveMovie(movie){
@@ -81,7 +81,7 @@ export function getSavedMovies(){
             'Accept': 'application/json',
             authorization: "Bearer " + localStorage.getItem('jwt'),
         },
-    }).then(x => x.json())
+    }).then(checkResponse)
 }
 
 export function deleteSavedMovie(movieId){
@@ -91,7 +91,7 @@ export function deleteSavedMovie(movieId){
             'Accept': 'application/json',
             authorization: "Bearer " + localStorage.getItem('jwt'),
         },
-    }).then(x => x.json())
+    }).then(checkResponse)
 }
 
 function checkResponse(res) {

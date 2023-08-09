@@ -74,6 +74,10 @@
 	letter-spacing: +0.03em;
 }
 
+.profile__button:disabled {
+    color: #424242;
+}
+
 .profile__button_type_edit{
 margin-top: 210px;
 }
@@ -84,7 +88,7 @@ margin-top: 210px;
 	text-decoration: none;
 }
 
-.profile__button:hover {
+.profile__button:hover:not(:disabled)  {
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.3s ease;

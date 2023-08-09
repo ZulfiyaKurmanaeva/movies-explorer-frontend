@@ -51,7 +51,7 @@ function Profile() {
                         <div className="profile__info">
                             <label className="profile__input-title">E-mail</label>
                             <input className="profile__input-field" type='email' required
-                                   placeholder='pochta@yandex.ru'
+                                   placeholder='pochta@pochta.ru'
                                    value={email} onChange={e => setEmail(e.target.value)}/>
                         </div>
                         {!(emailValid()) &&
