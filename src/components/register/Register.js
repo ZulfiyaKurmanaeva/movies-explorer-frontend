@@ -4,9 +4,7 @@ import logo from '../../images/header__logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import {useContext, useState} from "react";
 import {login, register} from "../../utils/MainApi";
-import {EMAIL_PATTERN} from '../../utils/constants';
-import {NAME_PATTERN} from '../../utils/constants';
-import {PASSWORD_PATTERN} from '../../utils/constants';
+import {EMAIL_PATTERN, NAME_PATTERN, PASSWORD_PATTERN, NAME_ERROR_PATTERN, EMAIL_ERROR_PATTERN} from '../../utils/constants';
 
 function Register() {
   const navigate = useNavigate();
@@ -45,12 +43,12 @@ function Register() {
                       <label className='register__label'>Имя</label>
                       <input className='register__input' type="text" placeholder='Виталий' 
                              maxLength="20" value={name} onChange={e => setName(e.target.value)} />
-                      {!(nameValid()) && <span className='register__input-error'>Имя может содержать только буквы, цифры и пробел (не менее 2-х символов)</span>}
+                      {!(nameValid()) && <span className='register__input-error'>{NAME_ERROR_PATTERN}</span>}
                       <label className='register__label'>E-mail</label>
                       <input className='register__input' type="email" placeholder='pochta@yandex.ru'
                              maxLength="30" value={email} onChange={e => setEmail(e.target.value)} />
                       {!(emailValid()) &&
-                          <span className='register__input-error'>Введите корректный адрес электронной почты</span>}
+                          <span className='register__input-error'>{EMAIL_ERROR_PATTERN}</span>}
                       <label className='register__label'>Пароль</label>
                       <input className='register__input register__input-password' type="password" placeholder='*********'
                              value={password} onChange={e => setPassword(e.target.value)} />
