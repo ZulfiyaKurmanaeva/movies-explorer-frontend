@@ -36,8 +36,6 @@ function Register() {
                                 setError(false);
                                 setOk(true);
                                 setToken(result.token);
-                                setError(false);
-                                setOk(true);
                                 setTimeout(() => navigate('/movies'), 1000);
                             } catch (e) {
                                 console.log(e)

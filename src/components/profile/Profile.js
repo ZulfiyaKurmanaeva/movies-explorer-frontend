@@ -2,12 +2,13 @@ import './Profile.css'
 import Header from '../header/Header';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from "react";
-import { getUser, userEdit } from "../../utils/MainApi";
+import {userEdit } from "../../utils/MainApi";
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import LoggedInUserContext from '../../contexts/LoggedInUserContext';
 import {EMAIL_PATTERN, NAME_PATTERN, NAME_ERROR_PATTERN, EMAIL_ERROR_PATTERN} from '../../utils/constants';
 
 function Profile() {
+    const navigate = useNavigate();
     const logoutNavigate = useNavigate();
     const [, setToken] = useContext(LoggedInUserContext);
 
@@ -43,6 +44,7 @@ function Profile() {
                             await userEdit(name, email);
                             setOk(true);
                             setUser({ name: name, email: email })
+                            setTimeout(() => navigate('/movies'), 1000);
                         } catch (e) {
                             setError(true);
                         }
