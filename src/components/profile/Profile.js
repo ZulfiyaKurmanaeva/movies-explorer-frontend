@@ -16,7 +16,7 @@ function Profile() {
         logoutNavigate('/');
     };
 
-    const user = useContext(CurrentUserContext);
+    const [user, setUser] = useContext(CurrentUserContext);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [error, setError] = useState(false);
@@ -51,13 +51,13 @@ function Profile() {
                         <div className="profile__info">
                             <label className="profile__input-title">Имя</label>
                             <input className='profile__input-field' type='text' required minLength="2" maxLength="40"
-                                placeholder='Виталий' value={name} onChange={e => { setName(e.target.value); setOk(false) }} />
+                                placeholder='Ваше имя' value={name} onChange={e => { setName(e.target.value); setOk(false) }} />
                         </div>
                         {!(nameValid()) && <span className='register__input-error'>{NAME_ERROR_PATTERN}</span>}
                         <div className="profile__info">
                             <label className="profile__input-title">E-mail</label>
                             <input className="profile__input-field" type='email' required
-                                placeholder='pochta@yandex.ru'
+                                placeholder='pochta@pochta.ru'
                                 value={email} onChange={e => { setEmail(e.target.value); setOk(false) }} />
                         </div>
                         {!(emailValid()) &&
@@ -67,9 +67,7 @@ function Profile() {
                         <button type='submit' className="profile__button profile__button_type_edit"
                             disabled={!(emailValid()) || !(nameValid()) || name === user.name && email === user.email || block || ok}>Редактировать
                         </button>
-                        <button onClick={logout} type='button'
-                            className="profile__button profile__button_type_logout">Выйти из аккаунта
-                        </button>
+                        <button onClick={logout} type='button' className="profile__button profile__button_type_logout">Выйти из аккаунта</button>
                     </form>
                 </section>
             </main>
