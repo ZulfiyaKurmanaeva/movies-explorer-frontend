@@ -74,7 +74,8 @@ function Movies({ isSaved }) {
                     setSaved(mov => mov.filter(d => d.movieId !== card.movieId));
                 }
             }
-        }
+        },
+        name: name
     }
 
     useEffect(() => {
@@ -83,6 +84,17 @@ function Movies({ isSaved }) {
             localStorage.setItem("name", name);
         }
     }, [isSaved, short, name]);
+
+    useEffect(() => {
+        function listener() {
+            setTimeout(() => {
+                setCount(initialMoviesCount());
+            }, 200);
+        }
+        window.addEventListener("resize", listener);
+        return () => window.removeEventListener("resize", listener);
+    })
+
     return (
         <MoviesContext.Provider value={context}>
             <Header />
@@ -95,8 +107,8 @@ function Movies({ isSaved }) {
     )
 }
 
-const initialMoviesCount = () => window.innerWidth > 480 ? 12 : 5;
-const addedMoviesCount = () => window.innerWidth > 480 ? 3 : 2;
+const initialMoviesCount = () => window.innerWidth > 480 ? (window.innerWidth > 768 ? 12 : 8) : 5;
+const addedMoviesCount = () => window.innerWidth > 480 ? (window.innerWidth > 768 ? 3 : 2) : 2;
 
 const mapExternalMovie = movie => ({
     country: movie.country,
