@@ -37,8 +37,8 @@ function Login() {
                         <input className='login__input' type="email" placeholder='pochta@pochta.ru' minLength="2"
                                maxLength="20" value={email} onChange={e => setEmail(e.target.value)} required/>
                         <label className='login__label'>Пароль</label>
-                        <input className='login__input' type="password" placeholder='пароль' minLength="2"
-                               maxLength="20" value={password} onChange={e => setPassword(e.target.value)} required/>
+                        <input className='login__input' type="password" placeholder='пароль' maxLength="20"
+                        value={password} onChange={e => setPassword(e.target.value)} required/>
                         {error && <span className='register__input-error'>Неправильная почта или пароль</span>}
                         <button type='submit' className='login__submit-button' disabled={email === "" || password === "" || block}>Войти</button>
                     </form>
@@ -53,4 +53,3 @@ function Login() {
 }
 
 export default Login;
-
