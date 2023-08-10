@@ -9,14 +9,16 @@ export default function MoviesCardList({ isSavedMovies }) {
     return context.shown === undefined || context.total === undefined || context.saved === undefined
         ? <Preloader />
         : context.error
-            ? <div style={{ color: "red", textAlign: "center" }}>Во время запроса произошла ошибка.
-            Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</div>
+            ? <div  className="movies__search-error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</div>
             : <section className="movies">
                 <div className="movies__container">
                     {context.shown.length === 0
-                        ? <div style={{ textAlign: "center" }}>Ничего не найдено</div>
+                        ? 
+                        context.name === ""
+                        ? <></>
+                        : <div className="movies__not-found">Ничего не найдено</div>
                         : <ul className="movies__list">
-                            {context.shown.map((movie, i) => <MoviesCard key={i} movie={movie} isSavedMovies={isSavedMovies} ctx={context} />)}
+                            {context.shown.map((movie, i) => <MoviesCard key={i} movie={movie} isSavedMovies={isSavedMovies} />)}
                         </ul>
                     }
                 </div>

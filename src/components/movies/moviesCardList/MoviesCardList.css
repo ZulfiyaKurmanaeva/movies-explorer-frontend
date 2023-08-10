@@ -62,6 +62,15 @@
     transition: opacity 0.3s ease;
 }
 
+.movies__search-error {
+	color: "red";
+	text-align: "center";
+}
+
+.movies__not-found {
+	text-align: "center";
+}
+
 @media screen and (max-width: 1180px) {
 	.movies {
 		padding: 0 30px;
