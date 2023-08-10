@@ -55,7 +55,7 @@ function Profile() {
                             <input className='profile__input-field' type='text' required minLength="2" maxLength="40"
                                 placeholder='Ваше имя' value={name} onChange={e => { setName(e.target.value); setOk(false) }} />
                         </div>
-                        {!(nameValid()) && <span className='register__input-error'>{NAME_ERROR_PATTERN}</span>}
+                        {!(nameValid()) && <span className='profile__input-error'>{NAME_ERROR_PATTERN}</span>}
                         <div className="profile__info">
                             <label className="profile__input-title">E-mail</label>
                             <input className="profile__input-field" type='email' required
@@ -63,9 +63,9 @@ function Profile() {
                                 value={email} onChange={e => { setEmail(e.target.value); setOk(false) }} />
                         </div>
                         {!(emailValid()) &&
-                            <span className='register__input-error'>{EMAIL_ERROR_PATTERN}</span>}
-                        {error && <span className='register__input-error'>Что-то пошло не так...</span>}
-                        {(ok) && <span className='register__input-ok'>Сохранено</span>}
+                            <span className='profile__input-error'>{EMAIL_ERROR_PATTERN}</span>}
+                        {error && <span className='profile__input-error'>Что-то пошло не так...</span>}
+                        {(ok) && <span className='profile__input-ok'>Сохранено</span>}
                         <button type='submit' className="profile__button profile__button_type_edit"
                             disabled={!(emailValid()) || !(nameValid()) || name === user.name && email === user.email || block || ok}>Редактировать
                         </button>

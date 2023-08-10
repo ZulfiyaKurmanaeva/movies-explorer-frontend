@@ -63,6 +63,29 @@
     transform: scale(1.01);
 }
 
+.profile__input-error{
+    margin: 0;
+    padding: 0;
+    color: #ff4062;
+    font-weight: 400;
+    font-size: 10px;
+    text-align: left;
+    display: flex;
+    width: 100%;
+    }
+  
+    .profile__input-ok {
+      margin: 0;
+      padding: 0;
+      color: #3074ab;
+      font-weight: 400;
+      font-size: 18px;
+      text-align: center;
+      display: flex;
+      width: 100%;
+      align-self: center;
+  }
+
 .profile__button {
     border: none;
     background-color: inherit;
