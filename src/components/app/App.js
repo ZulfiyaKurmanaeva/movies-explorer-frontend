@@ -36,7 +36,7 @@ export default function App() {
 
     return (
         <div className="page">
-            <CurrentUserContext.Provider value={user}>
+            <CurrentUserContext.Provider value={[user, setUser]}>
                 <LoggedInUserContext.Provider value={[loggedIn, setToken]}>
                     <Routes>
                         <Route path='/' element={<Main />} />
