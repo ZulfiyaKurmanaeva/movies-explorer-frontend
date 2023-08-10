@@ -44,7 +44,7 @@ function Movies({ isSaved }) {
     useEffect(() => {
         if (total !== undefined && saved !== undefined) {
             const filtered = (isSaved ? saved : total)
-                .filter(mov => (short ? mov.duration <= 52 : true) && mov.nameRU.toLowerCase().includes(name.toLowerCase()));
+                .filter(mov => (short ? mov.duration <= 40 : true) && mov.nameRU.toLowerCase().includes(name.toLowerCase()));
             if ((filtered.length <= count) || isSaved) {
                 setCanShowMore(false);
                 setShown(filtered);
