@@ -42,6 +42,7 @@ function Profile() {
                         try {
                             await userEdit(name, email);
                             setOk(true);
+                            setUser({ name: name, email: email })
                         } catch (e) {
                             setError(true);
                         }
