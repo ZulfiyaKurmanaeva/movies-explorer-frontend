@@ -3,7 +3,7 @@ import './MoviesCard.css'
 import MoviesContext from '../../../contexts/MoviesContext';
 
 export default function MoviesCard({movie, isSavedMovies }) {
-    const context = useContext(MoviesContext);
+    const cardContext = useContext(MoviesContext);
     return (
     <li className="movie-card">
         <img className="movie-card__image" src={movie.image} alt={`${movie.nameRU}`} onClick={() => window.open(movie.trailerLink, "_blank")}/>
@@ -15,14 +15,14 @@ export default function MoviesCard({movie, isSavedMovies }) {
                 {isSavedMovies
                 ? <button type='button'
                     className={'movie-card__remove'}
-                    onClick={() => context.delete(movie)}></button>
-                : context.saved === undefined || context.saved.every(mov => mov.movieId !== movie.movieId)
+                    onClick={() => cardContext.delete(movie)}></button>
+                : cardContext.saved === undefined || cardContext.saved.every(mov => mov.movieId !== movie.movieId)
                     ? <button type='button'
                         className={'movie-card__like'}
-                        onClick={() => context.save(movie)}></button>
+                        onClick={() => cardContext.save(movie)}></button>
                     : <button type='button'
                         className={'movie-card__like movie-card__like_active'}
-                        onClick={() => context.delete(movie)}></button>}
+                        onClick={() => cardContext.delete(movie)}></button>}
             </div>
     </li>            
     )

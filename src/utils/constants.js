@@ -4,3 +4,20 @@ export const PASSWORD_PATTERN = /[^ ]+/;
 
 export const NAME_ERROR_PATTERN = 'Имя может содержать только буквы, цифры и пробел (не менее 2-х символов)';
 export const EMAIL_ERROR_PATTERN = 'Введите корректный адрес электронной почты';
+
+export const initialMoviesCount = () => window.innerWidth > 480 ? (window.innerWidth > 768 ? 12 : 8) : 5;
+export const addedMoviesCount = () => window.innerWidth > 480 ? (window.innerWidth > 768 ? 3 : 2) : 2;
+
+export const mapExternalMovie = movie => ({
+    country: movie.country,
+    director: movie.director,
+    duration: movie.duration,
+    year: movie.year,
+    description: movie.description,
+    image: "https://api.nomoreparties.co" + movie.image.url,
+    trailerLink: movie.trailerLink,
+    thumbnail: "https://api.nomoreparties.co" + movie.image.formats.thumbnail.url,
+    movieId: movie.id,
+    nameRU: movie.nameRU,
+    nameEN: movie.nameEN,
+});

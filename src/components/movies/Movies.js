@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getAllMovies } from '../../utils/MoviesApi';
 import { deleteSavedMovie, getSavedMovies, saveMovie } from '../../utils/MainApi';
 import MoviesContext from '../../contexts/MoviesContext';
+import {initialMoviesCount, mapExternalMovie, addedMoviesCount} from '../../utils/constants';
 
 function Movies({ isSaved }) {
     const shortCached = localStorage.getItem("short");
@@ -31,6 +32,7 @@ function Movies({ isSaved }) {
             getSavedMovies().then(setSaved).catch(setError);
         }
     }, []);
+
     useEffect(() => {
         if (isSaved) {
             setShort(false);
@@ -56,7 +58,7 @@ function Movies({ isSaved }) {
     }, [total, saved, count, isSaved, short, name]);
 
 
-    const context = {
+    const moviesListContext = {
         total: total,
         shown: shown,
         saved: saved,
@@ -96,7 +98,7 @@ function Movies({ isSaved }) {
     })
 
     return (
-        <MoviesContext.Provider value={context}>
+        <MoviesContext.Provider value={moviesListContext}>
             <Header />
             <main>
                 <SearchForm short={short} setShort={v => { setShort(v); setCount(initialMoviesCount()) }} name={name} setName={setName} />
@@ -106,22 +108,5 @@ function Movies({ isSaved }) {
         </MoviesContext.Provider>
     )
 }
-
-const initialMoviesCount = () => window.innerWidth > 480 ? (window.innerWidth > 768 ? 12 : 8) : 5;
-const addedMoviesCount = () => window.innerWidth > 480 ? (window.innerWidth > 768 ? 3 : 2) : 2;
-
-const mapExternalMovie = movie => ({
-    country: movie.country,
-    director: movie.director,
-    duration: movie.duration,
-    year: movie.year,
-    description: movie.description,
-    image: "https://api.nomoreparties.co" + movie.image.url,
-    trailerLink: movie.trailerLink,
-    thumbnail: "https://api.nomoreparties.co" + movie.image.formats.thumbnail.url,
-    movieId: movie.id,
-    nameRU: movie.nameRU,
-    nameEN: movie.nameEN,
-});
 
 export default Movies;

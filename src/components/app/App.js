@@ -43,8 +43,8 @@ export default function App() {
                         <Route path='/movies' element={<ProtectedRoute loggedIn={loggedIn}><Movies saved={false} /></ProtectedRoute>} />
                         <Route path='/saved-movies' element={<ProtectedRoute loggedIn={loggedIn}><Movies isSaved={true} /></ProtectedRoute>} />
                         <Route path='/profile' element={<ProtectedRoute loggedIn={loggedIn}><Profile /></ProtectedRoute>} />
-                        <Route path='/signup' element={<OnlyUnauthorizedRoute loggedIn={loggedIn}><Register /></OnlyUnauthorizedRoute>} />
-                        <Route path='/signin' element={<OnlyUnauthorizedRoute loggedIn={loggedIn}><Login /></OnlyUnauthorizedRoute>} />
+                        <Route path='/signup' element={<UnauthorizedRoute loggedIn={loggedIn}><Register /></UnauthorizedRoute>} />
+                        <Route path='/signin' element={<UnauthorizedRoute loggedIn={loggedIn}><Login /></UnauthorizedRoute>} />
                         <Route path='*' element={<NotFoundPage />} />
                     </Routes>
                 </LoggedInUserContext.Provider>
@@ -57,7 +57,7 @@ function ProtectedRoute({ loggedIn, children }) {
     return loggedIn === undefined ? <></> : (loggedIn ? <>{children}</> : <NotFoundPage />);
 }
 
-function OnlyUnauthorizedRoute({ loggedIn, children }) {
+function UnauthorizedRoute({ loggedIn, children }) {
     const navigate = useNavigate();
     if (loggedIn) {
         navigate("/movies");
