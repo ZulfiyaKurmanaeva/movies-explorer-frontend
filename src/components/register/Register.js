@@ -14,9 +14,9 @@ function Register() {
   const [password, setPassword] = useState();
   const [error, setError] = useState(false);
   const [ok, setOk] = useState(false);
-  const nameValid = () => name === undefined || name.match(NAME_PATTERN) && name.length >= 2;
+  const nameValid = () => name === undefined || (name.match(NAME_PATTERN) && name.length >= 2);
   const emailValid = () => email === undefined || email.toLowerCase().match(EMAIL_PATTERN);
-  const passwordValid = () => password === undefined || password.match(PASSWORD_PATTERN) && password.length >= 4;
+  const passwordValid = () => password === undefined || (password.match(PASSWORD_PATTERN) && password.length >= 4);
   const [, setToken] = useContext(LoggedInUserContext);
       
   return (

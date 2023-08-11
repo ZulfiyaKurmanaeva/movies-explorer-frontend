@@ -67,7 +67,7 @@ function Profile() {
                         {error && <span className='profile__input-error'>Что-то пошло не так...</span>}
                         {(ok) && <span className='profile__input-ok'>Сохранено</span>}
                         <button type='submit' className="profile__button profile__button_type_edit"
-                            disabled={!(emailValid()) || !(nameValid()) || name === user.name && email === user.email || block || ok}>Редактировать
+                            disabled={!(emailValid()) || !(nameValid()) || (name === user.name && email === user.email) || block || ok}>Редактировать
                         </button>
                         <button onClick={logout} type='button' className="profile__button profile__button_type_logout">Выйти из аккаунта</button>
                     </form>
