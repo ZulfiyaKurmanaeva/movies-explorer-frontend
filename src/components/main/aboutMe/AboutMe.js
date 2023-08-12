@@ -18,7 +18,7 @@ function AboutMe() {
               и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур».
               После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
             </p>
-            <a className="about-me__link" href="https://dzen.ru/" target="_blank" rel="noreferrer">Github</a>
+            <a className="about-me__link" href="https://github.com/ZulfiyaKurmanaeva" target="_blank" rel="noreferrer">Github</a>
           </div>
           <img className="about-me__avatar" src={avatar} alt="мое фото" />
         </div>
