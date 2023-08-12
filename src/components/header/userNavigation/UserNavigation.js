@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+
 import Burger from '../burger/Burger';
+
 import './UserNavigation.css';
 
 function UserNavigation () {

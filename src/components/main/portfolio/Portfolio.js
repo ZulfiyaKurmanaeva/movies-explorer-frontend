@@ -1,6 +1,8 @@
-import './Portfolio.css'
-import linkArrow from '../../../images/link-arrow.svg'
 import { Link } from 'react-router-dom';
+
+import linkArrow from '../../../images/link-arrow.svg'
+
+import './Portfolio.css'
 
 function Portfolio() {
 

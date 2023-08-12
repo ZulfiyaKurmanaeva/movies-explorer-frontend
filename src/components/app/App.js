@@ -1,15 +1,19 @@
-import './App.css';
+import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+
 import Main from '../main/Main';
 import Movies from '../movies/Movies';
 import Register from '../register/Register';
 import Login from '../login/Login';
 import Profile from '../profile/Profile';
 import NotFoundPage from '../notFoundPage/NotFoundPage';
+
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoggedInUserContext from "../../contexts/LoggedInUserContext";
-import { useEffect, useState } from "react";
-import { getUser } from "../../utils/MainApi";
+
+import { getUser, tokencheck } from "../../utils/MainApi";
+
+import './App.css';
 
 export default function App() {
     const [loggedIn, setLoggedIn] = useState();
@@ -23,14 +27,22 @@ export default function App() {
             localStorage.clear();
         } else {
             localStorage.setItem("jwt", token);
-            getUser().then(u => {
-                setLoggedIn(true);
-                setUser(u);
-            }).catch(() => {
+            tokencheck(token)
+            .then(() => {
+                getUser().then(u => {
+                    setLoggedIn(true);
+                    setUser(u);
+                }).catch(() => {
+                    setLoggedIn(false);
+                    setUser({});
+                    localStorage.clear();
+                });
+            })
+            .catch(() => {
                 setLoggedIn(false);
                 setUser({});
                 localStorage.clear();
-            })
+            });
         }
     }, [token]);
 

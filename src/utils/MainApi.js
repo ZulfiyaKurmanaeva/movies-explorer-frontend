@@ -1,8 +1,14 @@
-const BASE_URL = 'https://api.diplom.nomoreparties.sbs'
+const BASE_URL = 'https://api.diplom.nomoreparties.sbs';
+
+function checkResponse(res) {
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+}
 
 export const register = (name, email, password) => {
     return fetch(`${BASE_URL}/signup`, {
-
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -12,9 +18,13 @@ export const register = (name, email, password) => {
             name,
             email,
             password
-
         })
-    }).then(checkResponse)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error during registration:", error);
+        throw error;
+    });
 };
 
 export const login = (email, password) => {
@@ -24,7 +34,12 @@ export const login = (email, password) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, password })
-    }).then(checkResponse)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error during login:", error);
+        throw error;
+    });
 };
 
 export const userEdit = (name, email) => {
@@ -39,7 +54,12 @@ export const userEdit = (name, email) => {
             'name': name,
             'email': email,
         })
-    }).then(checkResponse)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error during user edit:", error);
+        throw error;
+    });
 };
 
 export const getUser = () => {
@@ -49,18 +69,28 @@ export const getUser = () => {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + localStorage.getItem('jwt'),
         },
-    }).then(checkResponse)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error getting user:", error);
+        throw error;
+    });
 };
 
-export function tokencheck() {
+export function tokencheck(token) {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            authorization: "Bearer " + localStorage.getItem('jwt'),
+            authorization: `Bearer ${token}`,
         }
-    }).then(checkResponse)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error during token check:", error);
+        throw error;
+    });
 }
 
 export function saveMovie(movie) {
@@ -72,8 +102,12 @@ export function saveMovie(movie) {
             authorization: "Bearer " + localStorage.getItem('jwt'),
         },
         body: JSON.stringify(movie)
-    }).then(checkResponse)
+    }).then(checkResponse).catch(error => {
+        console.error("Error posting saved movies.", error);
+        throw error;
+    });
 }
+
 
 export function getSavedMovies() {
     return fetch(`${BASE_URL}/movies`, {
@@ -81,22 +115,25 @@ export function getSavedMovies() {
             'Accept': 'application/json',
             authorization: "Bearer " + localStorage.getItem('jwt'),
         },
-    }).then(checkResponse)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error getting saved movies:", error);
+        throw error;
+    });
 }
 
 export function deleteSavedMovie(movieId) {
     return fetch(`${BASE_URL}/movies/${movieId}`, {
         method: "DELETE",
         headers: {
-            'Accept': 'application/json',
-            authorization: "Bearer " + localStorage.getItem('jwt'),
+            Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+            "Content-Type": "application/json",
         },
-    }).then(checkResponse)
-}
-
-function checkResponse(res) {
-    if (res.ok) {
-        return res.json();
-    }
-    return Promise.reject(`Ошибка: ${res.status}`)
+    })
+    .then(checkResponse)
+    .catch(error => {
+        console.error("Error deleting the movie:", error);
+        throw error;
+    });
 }

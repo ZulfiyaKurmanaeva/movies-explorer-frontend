@@ -1,5 +1,6 @@
-import './Burger.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+
+import './Burger.css';
 
 function Burger({ isOpened, closeBurger }) {
   const location = useLocation();

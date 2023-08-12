@@ -1,10 +1,14 @@
-import LoggedInUserContext from "../../contexts/LoggedInUserContext";
-import './Register.css'
-import logo from '../../images/header__logo.svg';
-import { Link, useNavigate } from 'react-router-dom';
 import {useContext, useState} from "react";
+import { Link, useNavigate } from 'react-router-dom';
+
+import LoggedInUserContext from "../../contexts/LoggedInUserContext";
+
 import {login, register} from "../../utils/MainApi";
 import {EMAIL_PATTERN, NAME_PATTERN, PASSWORD_PATTERN, NAME_ERROR_PATTERN, EMAIL_ERROR_PATTERN} from '../../utils/constants';
+
+import logo from '../../images/header__logo.svg';
+
+import './Register.css'
 
 function Register() {
   const navigate = useNavigate();
@@ -18,6 +22,21 @@ function Register() {
   const emailValid = () => email === undefined || email.toLowerCase().match(EMAIL_PATTERN);
   const passwordValid = () => password === undefined || (password.match(PASSWORD_PATTERN) && password.length >= 4);
   const [, setToken] = useContext(LoggedInUserContext);
+
+  const handleRegisterSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        await register(name, email, password);
+        const result = await login(email, password);
+        setError(false);
+        setOk(true);
+        setToken(result.token);
+        setTimeout(() => navigate('/movies'), 2000);
+    } catch (e) {
+        console.log(e)
+        setError(true);
+    }
+   }
       
   return (
       <main>
@@ -28,20 +47,7 @@ function Register() {
               </div>
               <div className='register__data'>
                   <form className='register__form'
-                        onSubmit={async (e) => {
-                            e.preventDefault();
-                            try {
-                                await register(name, email, password);
-                                const result = await login(email, password);
-                                setError(false);
-                                setOk(true);
-                                setToken(result.token);
-                                setTimeout(() => navigate('/movies'), 1000);
-                            } catch (e) {
-                                console.log(e)
-                                setError(true);
-                            }
-                        }}>
+                        onSubmit={handleRegisterSubmit}>
                       <label className='register__label'>Имя</label>
                       <input className='register__input' type="text" placeholder='Виталий' 
                              maxLength="20" value={name} onChange={e => setName(e.target.value)} />

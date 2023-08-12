@@ -1,13 +1,18 @@
 const API_URL = "https://api.nomoreparties.co/beatfilm-movies";
 
 export async function getAllMovies() {
-    const r = await fetch(API_URL);
-    return await checkResponse(r);
+    try {
+        const response = await fetch(API_URL);
+        return await checkResponse(response);
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        throw error;
+    }
 }
 
 function checkResponse(res) {
     if (res.ok) {
         return res.json();
     }
-    return Promise.reject(`Ошибка: ${res.status}`)
+    return Promise.reject(`Error: ${res.status}`)
 }

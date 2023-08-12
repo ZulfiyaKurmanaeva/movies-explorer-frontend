@@ -1,6 +1,8 @@
 import React from 'react';
-import './AboutMe.css';
+
 import avatar from '../../../images/vit__avatar.png';
+
+import './AboutMe.css';
 
 function AboutMe() {
   return (

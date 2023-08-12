@@ -1,8 +1,10 @@
-import './MoviesCardList.css'
-import Preloader from "../../Preloader/Preloader";
 import { useContext } from 'react';
+
+import Preloader from "../../Preloader/Preloader";
 import MoviesContext from '../../../contexts/MoviesContext';
+
 import MoviesCard from '../moviesCard/MoviesCard';
+import './MoviesCardList.css'
 
 export default function MoviesCardList({ isSavedMovies }) {
     const cardListContext = useContext(MoviesContext)

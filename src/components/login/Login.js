@@ -1,9 +1,13 @@
-import './Login.css'
-import { Link } from 'react-router-dom';
-import logo from '../../images/header__logo.svg';
-import {login} from "../../utils/MainApi";
 import {useContext, useState} from "react";
+import { Link } from 'react-router-dom';
+
+import {login} from "../../utils/MainApi";
+
 import LoggedInUserContext from "../../contexts/LoggedInUserContext";
+
+import logo from '../../images/header__logo.svg';
+
+import './Login.css'
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -11,6 +15,19 @@ function Login() {
     const [error, setError] = useState(false);
     const [ , setToken] = useContext(LoggedInUserContext);
     const [block, setBlock] = useState(false);
+
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+        setBlock(true);
+        try {
+            console.log(email, password)
+            const result = await login(email, password);
+            setToken(result.token);                            
+        } catch {
+            setError(true);
+        }
+        setBlock(false);
+       };
     
     return (
         <main>
@@ -20,18 +37,7 @@ function Login() {
                     <h1 className='login__title'>Рады видеть!</h1>
                 </div>
                 <div className='login__data'>
-                    <form className='login__form' onSubmit={async e => {
-                        e.preventDefault();
-                        setBlock(true);
-                        try {
-                            console.log(email, password)
-                            const result = await login(email, password);
-                            setToken(result.token);                            
-                        } catch {
-                            setError(true);
-                        }
-                        setBlock(false);
-                    }}>
+                    <form className='login__form' onSubmit={handleLoginSubmit}>
                         <label className='login__label'>E-mail</label>
                         <input className='login__input' type="email" placeholder='pochta@pochta.ru' minLength="2"
                                maxLength="20" value={email} onChange={e => setEmail(e.target.value)} required/>
@@ -51,4 +57,5 @@ function Login() {
     )
 }
 
-export default Login;
+export default Login;    
+       

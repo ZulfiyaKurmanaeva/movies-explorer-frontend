@@ -1,12 +1,16 @@
+import { useEffect, useState } from "react";
+
 import Header from '../header/Header';
 import SearchForm from './searchForm/SearchForm'
 import MoviesCardList from './moviesCardList/MoviesCardList'
 import Footer from '../footer/Footer'
-import { useEffect, useState } from "react";
+
 import { getAllMovies } from '../../utils/MoviesApi';
 import { deleteSavedMovie, getSavedMovies, saveMovie } from '../../utils/MainApi';
+
 import MoviesContext from '../../contexts/MoviesContext';
-import {initialMoviesCount, mapExternalMovie, addedMoviesCount} from '../../utils/constants';
+
+import {INITIAL_MOVIES_COUNT, ADDED_MOVIE_COUNT, MAP_EXTERNAL_MOVIE} from '../../utils/constants';
 
 function Movies({ isSaved }) {
     const shortCached = localStorage.getItem("short");
@@ -14,7 +18,7 @@ function Movies({ isSaved }) {
     const totalCached = localStorage.getItem("total");
     const [short, setShort] = useState(isSaved || shortCached === null ? false : shortCached === "true");
     const [name, setName] = useState(isSaved ? "" : nameCached ?? "");
-    const [count, setCount] = useState(initialMoviesCount());
+    const [count, setCount] = useState(INITIAL_MOVIES_COUNT());
     const [total, setTotal] = useState(totalCached === null ? undefined : JSON.parse(totalCached));
     const [shown, setShown] = useState();
     const [saved, setSaved] = useState();
@@ -23,7 +27,7 @@ function Movies({ isSaved }) {
 
     useEffect(() => {
         if (total === undefined) {
-            getAllMovies().then(mov => mov.map(mapExternalMovie)).then(totalMov => {
+            getAllMovies().then(mov => mov.map(MAP_EXTERNAL_MOVIE)).then(totalMov => {
                 setTotal(totalMov);
                 localStorage.setItem("total", JSON.stringify(totalMov))
             }).catch(setError);
@@ -57,26 +61,42 @@ function Movies({ isSaved }) {
         }
     }, [total, saved, count, isSaved, short, name]);
 
-
     const moviesListContext = {
         total: total,
         shown: shown,
         saved: saved,
         canShowMore: canShowMore,
         error: error,
-        showMore: () => { setCount(count => count + addedMoviesCount()) },
-        save: card => {
-            saveMovie(card).then(sm => setSaved(mov => mov === undefined ? undefined : [...mov, sm])).catch(setError);
-        },
-        delete: card => {
-            if (saved !== undefined) {
-                const savedEquivalent = ("_id" in card) ? card : saved.find(mov => mov.movieId === card.movieId);
-                if (savedEquivalent !== undefined) {
-                    deleteSavedMovie(savedEquivalent._id).catch(setError);
-                    setSaved(mov => mov.filter(d => d.movieId !== card.movieId));
-                }
+        showMore: () => { setCount(count => count + ADDED_MOVIE_COUNT()) },
+        save: async card => {
+            try {
+                const savedMovie = await saveMovie(card);
+
+                const savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || [];
+                savedMovies.push(savedMovie);
+                localStorage.setItem('savedMovies', JSON.stringify(savedMovies));
+ 
+                setSaved(mov => (mov === undefined ? [savedMovie] : [...mov, savedMovie]));
+            } catch (error) {
+                setError(error);
             }
         },
+        delete: async card => {
+            try {
+                if (saved !== undefined) {
+                    const savedEquivalent = ("_id" in card)
+                        ? card
+                        : saved.find(mov => mov.movieId === card.movieId);
+        
+                    if (savedEquivalent !== undefined) {
+                        await deleteSavedMovie(savedEquivalent._id);
+                        setSaved(mov => mov.filter(d => d.movieId !== card.movieId));
+                    }
+                }
+            } catch (error) {
+                setError(error);
+            }
+        },  
         name: name
     }
 
@@ -90,7 +110,7 @@ function Movies({ isSaved }) {
     useEffect(() => {
         function listener() {
             setTimeout(() => {
-                setCount(initialMoviesCount());
+                setCount(INITIAL_MOVIES_COUNT());
             }, 200);
         }
         window.addEventListener("resize", listener);
@@ -101,7 +121,7 @@ function Movies({ isSaved }) {
         <MoviesContext.Provider value={moviesListContext}>
             <Header />
             <main>
-                <SearchForm short={short} setShort={v => { setShort(v); setCount(initialMoviesCount()) }} name={name} setName={setName} />
+                <SearchForm short={short} setShort={v => { setShort(v); setCount(INITIAL_MOVIES_COUNT()) }} name={name} setName={setName} />
                 <MoviesCardList short={short} name={name} isSavedMovies={isSaved} />
             </main>
             <Footer />
