@@ -11,7 +11,7 @@ import NotFoundPage from '../notFoundPage/NotFoundPage';
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoggedInUserContext from "../../contexts/LoggedInUserContext";
 
-import { getUser, tokencheck } from "../../utils/MainApi";
+import { getUser, tokenCheck } from "../../utils/MainApi";
 
 import './App.css';
 
@@ -27,7 +27,7 @@ export default function App() {
             localStorage.clear();
         } else {
             localStorage.setItem("jwt", token);
-            tokencheck(token)
+            tokenCheck(token)
             .then(() => {
                 getUser().then(u => {
                     setLoggedIn(true);

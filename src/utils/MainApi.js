@@ -77,7 +77,7 @@ export const getUser = () => {
     });
 };
 
-export function tokencheck(token) {
+export function tokenCheck(token) {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
         headers: {
