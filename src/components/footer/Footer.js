@@ -12,7 +12,7 @@ function Footer() {
         <p className="footer__date">&copy; {new Date().getFullYear()}</p>
         <nav className='footer__links'>
           <Link to="https://practicum.yandex.ru" className="footer__link" target="_blank" rel="noreferrer" >Яндекс.Практикум</Link>
-          <Link to="https://github.com/ZulfiyaKurmanaeva" className="footer__link" target="_blank" rel="noreferrer">Github</Link>
+          <Link to="https://dzen.ru/" className="footer__link" target="_blank" rel="noreferrer">Github</Link>
         </nav>
       </div>
       </div>
