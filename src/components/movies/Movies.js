@@ -61,42 +61,46 @@ function Movies({ isSaved }) {
         }
     }, [total, saved, count, isSaved, short, name]);
 
-    const moviesListContext = {
+    const saveCard = async (card) => {
+        try {
+            const savedMovie = await saveMovie(card);
+
+            const savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || [];
+            savedMovies.push(savedMovie);
+            localStorage.setItem('savedMovies', JSON.stringify(savedMovies));
+
+            setSaved(mov => (mov === undefined ? [savedMovie] : [...mov, savedMovie]));
+        } catch (error) {
+            setError(error);
+        }
+       };
+
+    const deleteCard = async (card) => {
+        try {
+            if (saved !== undefined) {
+                const savedEquivalent = ("_id" in card)
+                    ? card
+                    : saved.find(mov => mov.movieId === card.movieId);
+    
+                if (savedEquivalent !== undefined) {
+                    await deleteSavedMovie(savedEquivalent._id);
+                    setSaved(mov => mov.filter(d => d.movieId !== card.movieId));
+                }
+            }
+        } catch (error) {
+            setError(error);
+        }
+       };
+
+    const moviesContext = {
         total: total,
         shown: shown,
         saved: saved,
         canShowMore: canShowMore,
         error: error,
         showMore: () => { setCount(count => count + ADDED_MOVIE_COUNT()) },
-        save: async card => {
-            try {
-                const savedMovie = await saveMovie(card);
-
-                const savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || [];
-                savedMovies.push(savedMovie);
-                localStorage.setItem('savedMovies', JSON.stringify(savedMovies));
- 
-                setSaved(mov => (mov === undefined ? [savedMovie] : [...mov, savedMovie]));
-            } catch (error) {
-                setError(error);
-            }
-        },
-        delete: async card => {
-            try {
-                if (saved !== undefined) {
-                    const savedEquivalent = ("_id" in card)
-                        ? card
-                        : saved.find(mov => mov.movieId === card.movieId);
-        
-                    if (savedEquivalent !== undefined) {
-                        await deleteSavedMovie(savedEquivalent._id);
-                        setSaved(mov => mov.filter(d => d.movieId !== card.movieId));
-                    }
-                }
-            } catch (error) {
-                setError(error);
-            }
-        },  
+        save: saveCard,
+        delete: deleteCard,  
         name: name
     }
 
@@ -118,7 +122,7 @@ function Movies({ isSaved }) {
     })
 
     return (
-        <MoviesContext.Provider value={moviesListContext}>
+        <MoviesContext.Provider value={moviesContext}>
             <Header />
             <main>
                 <SearchForm short={short} setShort={v => { setShort(v); setCount(INITIAL_MOVIES_COUNT()) }} name={name} setName={setName} />

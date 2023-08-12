@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Main from '../main/Main';
 import Movies from '../movies/Movies';
@@ -7,6 +7,9 @@ import Register from '../register/Register';
 import Login from '../login/Login';
 import Profile from '../profile/Profile';
 import NotFoundPage from '../notFoundPage/NotFoundPage';
+
+import ProtectedRoute from "../routes/ProtectedRoute";
+import UnauthorizedRoute from "../routes/UnauthorizedRoute";
 
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import LoggedInUserContext from "../../contexts/LoggedInUserContext";
@@ -35,13 +38,13 @@ export default function App() {
                 }).catch(() => {
                     setLoggedIn(false);
                     setUser({});
-                    localStorage.clear();
+                    localStorage.clear();            
                 });
             })
             .catch(() => {
                 setLoggedIn(false);
                 setUser({});
-                localStorage.clear();
+                localStorage.clear();               
             });
         }
     }, [token]);
@@ -63,16 +66,4 @@ export default function App() {
             </CurrentUserContext.Provider>
         </div>
     );
-}
-
-function ProtectedRoute({ loggedIn, children }) {
-    return loggedIn === undefined ? <></> : (loggedIn ? <>{children}</> : <NotFoundPage />);
-}
-
-function UnauthorizedRoute({ loggedIn, children }) {
-    const navigate = useNavigate();
-    if (loggedIn) {
-        navigate("/movies");
-    }
-    return loggedIn === false ? <>{children}</> : <></>;
-}
+};

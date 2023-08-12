@@ -14,7 +14,7 @@ function Portfolio() {
         <ul className='portfolio__links'>
           <li><Link to='https://zulfiyakurmanaeva.github.io/PROdocumenty/' target="_blank" rel="noreferrer" className='portfolio__link'>
             Статичный сайт<img className='portfolio__icon' src={linkArrow} alt="стрелка"/></Link></li>
-          <li><Link to='zulfiyakurmanaeva.github.io/russian-travel/' target="_blank" rel="noreferrer" className='portfolio__link'>
+          <li><Link to='https://zulfiyakurmanaeva.github.io/russian-travel/' target="_blank" rel="noreferrer" className='portfolio__link'>
             <span>Адаптивный сайт</span>
             <img className='portfolio__icon' src={linkArrow} alt="стрелка"/>
           </Link></li>

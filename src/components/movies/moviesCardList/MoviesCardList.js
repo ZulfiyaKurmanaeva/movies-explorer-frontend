@@ -20,7 +20,7 @@ export default function MoviesCardList({ isSavedMovies }) {
                         ? <></>
                         : <div className="movies__not-found">Ничего не найдено</div>
                         : <ul className="movies__list">
-                            {cardListContext.shown.map((movie, i) => <MoviesCard key={i} movie={movie} isSavedMovies={isSavedMovies} />)}
+                            {cardListContext.shown.map((movie) => <MoviesCard key={movie.movieId} movie={movie} isSavedMovies={isSavedMovies} />)}
                         </ul>
                     }
                 </div>
