@@ -1,0 +1,132 @@
+.burger__overlay {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);  
+}
+
+.burger__container {
+    z-index: 4;
+    top: 0;
+    right: 0;
+    padding: 160px 90px 90px;
+    background-color: #202020;    
+    width: 68%;
+    height: 100%;
+    min-height: 1024px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+      }
+  
+  .burger__container_type_hidden {
+    display: none;
+  }
+  
+  .burger__close-button {
+    width: 22px;
+    height: 22px;
+    top: 25px;
+    right: 25px;
+    background-color:inherit;
+    background-image: url(../../../images/burgerClose.svg);
+    background-position: center;
+    border: 0;
+    position: absolute;    
+  }
+  
+  .burger__close-button:hover {
+    opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  }
+  
+  .burger__navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+  }  
+  
+  .burger__link {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #fff;
+    padding-left: 2px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: +0.08em;
+  }
+  
+  .burger__link:hover {
+    opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;  
+  }
+  
+  .burger__link_type_active {
+    padding-bottom: 5px;
+    border-bottom: solid #fff 2px;
+  }
+  
+  .burger__profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100px;
+    height: 32px;
+    background-color: #313131;
+    border-radius: 20%;
+    margin: 0;
+  }
+  
+  .burger__profile-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .burger__profile-link:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  @media (max-width: 500px) {
+    .burger__container {
+      width: 100%;
+      height: 100%;
+      padding: 147px 10px 46px;
+    }
+
+    .burger__close-button {
+      width: 22px;
+      height: 22px;
+      top: 18px;
+      right: 18px;      
+    }
+
+      
+  .burger__profile-link {
+    margin: 0;
+  }
+    
+    .burger__navbar {
+      gap: 22px;
+    }
+      
+    .burger__profile-name {
+      padding: 4px;
+    }
+  }

@@ -1,0 +1,60 @@
+ .header-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;    
+  }
+  
+  .header-buttons__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;    
+    border: 0;
+  }
+   
+  .header-buttons__button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .header-buttons__button_type_signin {   
+    color: #fff;
+    background-color: inherit;
+    letter-spacing: +0.06em;
+  }
+   
+  .header-buttons__button_type_login {
+    background-color: #3DDC84;
+    border-radius: 3px;
+    width: 76px;
+    height: 32px;    
+    color: #000;   
+  }  
+  
+   @media (max-width: 500px) {
+    
+    .header-buttons__button_type_login {
+      width: 55px;
+      height: 25px;
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: -0.01em;
+      padding: 0;
+    }
+  
+    .header-buttons {
+      gap: 8px;
+    }
+  
+    .header-buttons__button_type_signin {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }

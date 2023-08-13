@@ -1,0 +1,112 @@
+  .user-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 2px;   
+  }
+  
+  .user-navbar__links {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    margin: 0 0 0 40px;
+  }
+  
+  .user-navbar__link {
+    text-align: right;
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: none;
+    letter-spacing: +0.03em;
+  }
+  
+  .user-navbar__link:hover {
+    opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  }
+  
+  .user-navbar__link_type_active {
+    font-weight: 500;
+    font-size: 14px;    
+  }
+
+  .user-navbar__profile-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100px;
+    height: 32px;
+    background-color: #313131;    
+    align-self: flex-end;
+    border-radius: 33px;
+  }
+  
+  .user-navbar__profile-link {
+    text-decoration: none;
+  }
+  
+  .user-navbar__profile-link:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .user-navbar__profile-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .user-navbar__burger-button {
+    width: 44px;
+    height: 44px;
+    background-image: url(../../../images/burger-logo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: inherit;
+    border: 0;
+    display: none;
+  }
+  
+  .user-navbar__burger-button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  @media (max-width: 800px) {
+    .user-navbar{
+      display: flex;
+      justify-content: flex-end;   
+    }
+    .user-navbar__links {
+      display: none;
+    }
+  
+    .user-navbar__profile-button {
+      display: none;
+    }
+
+    .user-navbar__burger-button {
+      display: flex;
+    } 
+  }
+  
+  @media (max-width: 500px) {
+    .user-navbar__burger-button {
+      width: 38px;
+      height: 38px;      
+    }
+   }
+  
+ 
