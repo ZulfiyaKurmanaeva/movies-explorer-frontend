@@ -1,13 +1,39 @@
-# movies-explorer-frontend
+# Movies Explorer
 
-3 часть дипломной работы Movies Explorer.
+### Дипломный проект, выполненный в рамках курса [Яндекс.Практикум](https://practicum.yandex.ru/web/)
 
-ссылка на pullrequest   https://github.com/ZulfiyaKurmanaeva/movies-explorer-frontend/pull/2
+## Описание проекта
+Movies Explorer - это интерактивная страница, на которой пользователи могут искать фильмы по ключевым словам и добавлять их в избранное в личном кабинете.
+
+## Функционал:
+- Авторизация и регистрация пользователей;
+- Редактирование профиля;
+- Поиск фильмов по ключевым словам;
+- Возможность добавлять фильмы в избранное.
+
+## Стек технологий:
+- HTML5;
+- CSS3:
+  - Flexbox;
+  - Grid Layout;
+  - Positioning;
+  - Adaptive UI;
+  - Media Queries;
+- Методология БЭМ;
+- JavaScript:
+  - Стиль CamelCase;
+  - Промисы (Promise);
+  - Асинхронность и оптимизация;
+  - Rest API;
+- Webpack;
+- React JS:
+  - Create React App;
+  - Портирование разметки в JSX;
+  - Функциональные компоненты;
+  - Хуки.
 
 IP 51.250.20.219
 
-Backend https://api.diplom.nomoreparties.sbs/
-
-Frontend  https://diplomov.nomoreparties.sbs/
+Ссылки на сайт:  https://diplomov.nomoreparties.sbs/
 
 ссылка на макет: https://disk.yandex.ru/d/N81yTKku_3rL-Q
