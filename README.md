@@ -9,22 +9,15 @@
       <p>The project has the following functions: </p>
       <ul>
         <li>Layout according to BEM methodology;</li>
-        <li>Adaptability at different resolutions - 1280px, 1024px, 768px, 320px, including breakpoints;</li>
+        <li>Adaptability at different resolutions;</li>
         <li>Using grid and flex technologies;</li>
-        <li>User authorization and registration, editing user data;</li>
-        <li>Search for movies, add and delete movies to favorites;</li>        
+        <li>User authorization and registration, editing user data;</li>        
       </ul>
       <p>The application is a diploma project developed during the web-development professional training course at <a href="https://practicum.yandex.ru/web/" target="_blank">Yandex.Practicum</a>.</p>
       <p>The result <a href="https://diplomov.nomoreparties.sbs/" target="_blank">here</a> or you can click on the image on the right.</p>
       <p align="center">* * *</p>
+
       <p><strong>Одностраничное приложение, в котором пользователи могут осуществлять поиск фильмов по ключевым словам, добавлять фильмы в избранное в личном кабинете.</strong></p>
-      <p>Функционал:</p>
-      <ul>
-        <li>Авторизация и регистрация пользователей;</li>
-        <li>Редактирование профиля;</li>
-        <li>Поиск фильмов по ключевым словам;</li>
-        <li>Возможность добавлять фильмы в избранное.</li>        
-      </ul>
       <p>Стек технологий: HTML5; CSS3; Методология БЭМ; JavaScript; Webpack; React JS.</p>
       <p>Приложение является дипломным проектом, разработанным в ходе курса "Веб-разработчик" от <a href="https://practicum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>.</p>
       <p>Для открытия приложения пройдите по <a href="https://diplomov.nomoreparties.sbs/" target="_blank">ссылке</a> либо кликните по картинке справа.</p>
