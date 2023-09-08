@@ -16,7 +16,6 @@
       <p>The application is a diploma project developed during the web-development professional training course at <a href="https://practicum.yandex.ru/web/" target="_blank">Yandex.Practicum</a>.</p>
       <p>The result <a href="https://diplomov.nomoreparties.sbs/" target="_blank">here</a> or you can click on the image on the right.</p>
       <p align="center">* * *</p>
-
       <p><strong>Одностраничное приложение, в котором пользователи могут осуществлять поиск фильмов по ключевым словам, добавлять фильмы в избранное в личном кабинете.</strong></p>
       <p>Стек технологий: HTML5; CSS3; Методология БЭМ; JavaScript; Webpack; React JS.</p>
       <p>Приложение является дипломным проектом, разработанным в ходе курса "Веб-разработчик" от <a href="https://practicum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>.</p>
