@@ -27,6 +27,7 @@
       </ul>
       <p>Стек технологий: HTML5; CSS3; Методология БЭМ; JavaScript; Webpack; React JS.</p>
       <p>Приложение является дипломным проектом, разработанным в ходе курса "Веб-разработчик" от <a href="https://practicum.yandex.ru/web/" target="_blank">Яндекс.Практикум</a>.</p>
+      <p>Для открытия приложения пройдите по <a href="https://diplomov.nomoreparties.sbs/" target="_blank">ссылке</a> либо кликните по картинке справа.</p>
       <p>Ссылка на макет: https://disk.yandex.ru/d/N81yTKku_3rL-Q</p>  
     </td>
     <td>
